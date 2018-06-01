@@ -66,11 +66,12 @@ module controle_Decoder (comando,comparador,clk,entrada);
 		cont = 0;
 		reset = 0;
 		b=0;
-		bitSgnal = 0; 
+		bitSgnal = 0;
 	end
+	up_counter(.out(tempo),.enable(enable),.clk(clk),.reset(reset));
+
 	always@(posedge clk)begin
 		
-		up_counter(.out(tempo),.enable(enable),.clk(clk),.reset(reset));
 		if(entrada==0 && etapa==0)begin
 			etapa <= 1;
 		end
@@ -78,10 +79,10 @@ module controle_Decoder (comando,comparador,clk,entrada);
 			etapa <=2;
 		end
 		if(entrada==0 && etapa == 2 )begin
-			etapa <= 8'd3;
+			etapa <= 3;
 			if(cont == 16)begin
-				cont <= 8'd0;
-				etapa <= 8'd4;
+				cont <= 0;
+				etapa <= 4;
 			end
 		end
 		if(entrada == 1 && etapa == 3)begin
@@ -98,9 +99,9 @@ module controle_Decoder (comando,comparador,clk,entrada);
 			enable <=0;
 			reset <=1;
 			if(cont == 8) begin
-				cont <= 8'b0;
+				cont <= 0;
 				etapa <=6;
-				bitSgnal <= 8'b0;
+				bitSgnal <= 0;
 				comando = copia;
 				reset <= 0;
 			end
@@ -108,7 +109,7 @@ module controle_Decoder (comando,comparador,clk,entrada);
 				etapa <=4;
 			end
 			if(tempo > 18)begin // bit = 1 
-				tempo <= 8'b0;
+				tempo <= 0;
 				b<= 1;
 				orgBits(.ordem(bitSgnal),.b(b),.out(copia),.clk(clk));
 				bitSgnal <= bitSgnal + 1;
@@ -118,7 +119,7 @@ module controle_Decoder (comando,comparador,clk,entrada);
 			end 
 			else if (tempo <= 18)begin// bit = 0
 				b<= 0;
-				tempo <= 8'b0;
+				tempo <= 0;
 				orgBits(.ordem(bitSgnal),.b(b),.out(copia),.clk(clk));
 				bitSgnal <= bitSgnal + 1;
 				if(bitSgnal==8)begin
@@ -137,9 +138,9 @@ module controle_Decoder (comando,comparador,clk,entrada);
 			enable <=0;
 			reset <=1;
 			if(cont == 8) begin
-				cont <= 8'b0;
+				cont <= 0;
 				etapa <=8;
-				bitSgnal <= 8'b0;
+				bitSgnal <= 0;
 				compadador <= copia;
 				reset <= 0;
 			end
@@ -147,7 +148,7 @@ module controle_Decoder (comando,comparador,clk,entrada);
 				etapa <=6;
 			end
 			if(tempo > 18)begin // bit = 1 
-				tempo <= 8'b0;
+				tempo <= 0;
 				b<= 1;
 				orgBits(.ordem(bitSgnal),.b(b),.out(copia),.clk(clk));
 				bitSgnal <= bitSgnal + 1;
@@ -156,7 +157,7 @@ module controle_Decoder (comando,comparador,clk,entrada);
 				end
 			end 
 			else if (tempo <= 18)begin// bit = 0
-				tempo <= 8'b0;
+				tempo <= 0;
 				b<= 0;
 				orgBits(.ordem(bitSgnal),.b(b),.out(copia),.clk(clk));
 				bitSgnal <= bitSgnal + 1;
@@ -166,11 +167,11 @@ module controle_Decoder (comando,comparador,clk,entrada);
 			end
 		end
 		if(etapa==8) begin
-			cont <= 8'b0;
+			cont <= 0;
 			etapa <=0;
-			bitSgnal <= 8'b0;
+			bitSgnal <= 0;
 			reset <= 0;
-			tempo <= 8'b0;
+			tempo <= 0;
 		end
 	end
 endmodule
