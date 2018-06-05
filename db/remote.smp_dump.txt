@@ -1,0 +1,6 @@
+
+State Machine - |Remoto|etapa
+Name etapa.00000000 etapa.00000010 etapa.00000001 
+etapa.00000000 0 0 0 
+etapa.00000001 1 0 1 
+etapa.00000010 1 1 0 

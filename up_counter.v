@@ -1,5 +1,5 @@
 module up_counter(out,enable,clk,reset);
-  output reg [16:0] out;
+  output reg [24:0] out;
   input enable;
   input clk;
   input reset;  
