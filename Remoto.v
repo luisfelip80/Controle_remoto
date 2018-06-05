@@ -8,10 +8,10 @@ module Remoto (comando,comparador,clk,entrada,led);
 	reg [7:0]etapa;
 	reg enable,reset,b,enableO;
 	reg [7:0]bitSgnal;
-	wire [7:0]tempoWire;
+	wire [16:0]tempoWire;
 	wire [7:0]copia1;
 	reg [7:0]copia2;
-	reg [7:0]tempo;
+	reg [16:0]tempo;
 	initial begin
 		led = 0;
 		etapa = 0;
@@ -35,9 +35,11 @@ module Remoto (comando,comparador,clk,entrada,led);
 		end
 		if(entrada==1 && etapa == 1)begin
 			tempo <= tempoWire;
-			if (tempo > 22000)begin
+			enable<= 0;
+			reset <=1;
+			if (tempo > 23000)begin
 				tempo <= 0;
-				etapa <=0;
+				etapa <=2;
 				enable<= 0;
 				reset <=1;
 				if(led)begin
@@ -47,6 +49,7 @@ module Remoto (comando,comparador,clk,entrada,led);
 					led<=1;
 				end
 			end
+			tempo <= 0;
 		end
 		if(entrada==0 && etapa == 2 )begin
 			etapa <= 3;
@@ -72,23 +75,30 @@ module Remoto (comando,comparador,clk,entrada,led);
 				cont <= 0;
 				etapa <=6;
 				bitSgnal <= 0;
-				comando = copia1;
+				comando = copia2;
 				reset <= 0;
 			end
 			else begin 
 				etapa <=4;
 			end
+			tempo <= tempoWire;
 			if(tempo > 23000)begin // bit = 1 
 				tempo <= 0;
 				b<= 1;
+				copia2 <= copia1;
+				enableO <= 0;
 				bitSgnal <= bitSgnal + 1;
+				enableO<=1;
 				if(bitSgnal==8)begin
 					bitSgnal <= 0;
 				end
-			end 
+			end
 			else if (tempo <= 23000)begin// bit = 0
 				b<= 0;
 				tempo <= 0;
+				enableO <= 1;
+				copia2 <= copia1;
+				enableO <= 0;
 				bitSgnal <= bitSgnal + 1;
 				if(bitSgnal==8)begin
 					bitSgnal <= 0;
@@ -96,7 +106,7 @@ module Remoto (comando,comparador,clk,entrada,led);
 			end
 		end
 		
-		if(entrada ==1 && etapa == 6)begin
+		if(entrada == 1 && etapa == 6)begin
 			enable<= 1;
 			etapa <= 7;
 			reset <=0;
@@ -109,35 +119,36 @@ module Remoto (comando,comparador,clk,entrada,led);
 				cont <= 0;
 				etapa <=8;
 				bitSgnal <= 0;
-				comparador <= copia1;
+				comparador <= copia2;
 				reset <= 0;
 			end
 			else begin
 				etapa <=6;
 			end
+			tempo<=tempoWire;
 			if(tempo > 23000)begin // bit = 1 
 				tempo <= 0;
-				b<= 1;
+				b <= 1;
 				//orgBits(.ordem(bitSgnal),.b(b),.out(copia),.clk(clk));
 				enableO <= 1;
+				copia2 <= copia1;
+				enableO <= 0;
 				bitSgnal <= bitSgnal + 1;
 				if(bitSgnal==8)begin
 					bitSgnal <= 0;
 				end
-				tempo <= tempoWire;
-				copia2 <= copia1;
 			end
 			else if (tempo <= 23000)begin// bit = 0
 				tempo <= 0;
 				b<= 0;
 				enableO <= 1;
+				copia2 <= copia1;
+				enableO <= 0;
 				//orgBits(.ordem(bitSgnal),.b(b),.out(copia),.clk(clk));
 				bitSgnal <= bitSgnal + 1;
 				if(bitSgnal==8)begin
 					bitSgnal <= 0;
 				end
-				tempo <= tempoWire;
-				copia2 <= copia1;
 			end
 		end
 		if(etapa==8) begin
