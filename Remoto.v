@@ -141,7 +141,7 @@ module Remoto (comando,comparador,clk,entrada,led);
 				b<= 0;
 				enableO <= 1;
 				copia2 <= copia1;  
-				enableO <= 0;                                            111111111111111111111111111111
+				enableO <= 0;                                           // 111111111111111111111111111111
 				//orgBits(.ordem(bitSgnal),.b(b),.out(copia),.clk(clk)); 1111111111111111111111111
 				bitSgnal <= bitSgnal + 1;  
 				if(bitSgnal==8)begin
