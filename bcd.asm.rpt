@@ -1,5 +1,5 @@
-Assembler report for remote
-Tue Jun 12 03:00:28 2018
+Assembler report for bcd
+Tue Jun 12 00:09:05 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/lfms/Downloads/Controle_remoto-master/remote.sof
+  5. Assembler Device Options: C:/Users/lfms/Downloads/Controle_remoto-master/bcd.sof
   6. Assembler Messages
 
 
@@ -37,9 +37,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Jun 12 03:00:28 2018 ;
-; Revision Name         ; remote                                ;
-; Top-level Entity Name ; identificador                         ;
+; Assembler Status      ; Successful - Tue Jun 12 00:09:05 2018 ;
+; Revision Name         ; bcd                                   ;
+; Top-level Entity Name ; bcdOut                                ;
 ; Family                ; Cyclone IV E                          ;
 ; Device                ; EP4CE115F29C7                         ;
 +-----------------------+---------------------------------------+
@@ -77,24 +77,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-----------------------------------------------------------+
-; Assembler Generated Files                                 ;
-+-----------------------------------------------------------+
-; File Name                                                 ;
-+-----------------------------------------------------------+
-; C:/Users/lfms/Downloads/Controle_remoto-master/remote.sof ;
-+-----------------------------------------------------------+
++--------------------------------------------------------+
+; Assembler Generated Files                              ;
++--------------------------------------------------------+
+; File Name                                              ;
++--------------------------------------------------------+
+; C:/Users/lfms/Downloads/Controle_remoto-master/bcd.sof ;
++--------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/lfms/Downloads/Controle_remoto-master/remote.sof ;
-+----------------+--------------------------------------------------------------------+
-; Option         ; Setting                                                            ;
-+----------------+--------------------------------------------------------------------+
-; Device         ; EP4CE115F29C7                                                      ;
-; JTAG usercode  ; 0xFFFFFFFF                                                         ;
-; Checksum       ; 0x0056344C                                                         ;
-+----------------+--------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/lfms/Downloads/Controle_remoto-master/bcd.sof ;
++----------------+-----------------------------------------------------------------+
+; Option         ; Setting                                                         ;
++----------------+-----------------------------------------------------------------+
+; Device         ; EP4CE115F29C7                                                   ;
+; JTAG usercode  ; 0xFFFFFFFF                                                      ;
+; Checksum       ; 0x0057A93C                                                      ;
++----------------+-----------------------------------------------------------------+
 
 
 +--------------------+
@@ -103,13 +103,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Jun 12 03:00:23 2018
-Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off remote -c remote
+    Info: Processing started: Tue Jun 12 00:09:00 2018
+Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off bcd -c bcd
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 439 megabytes
-    Info: Processing ended: Tue Jun 12 03:00:28 2018
+    Info: Processing ended: Tue Jun 12 00:09:05 2018
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 

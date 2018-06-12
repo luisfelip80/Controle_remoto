@@ -1,5 +1,5 @@
 Analysis & Synthesis report for remote
-Tue Jun 05 10:58:10 2018
+Tue Jun 12 03:00:07 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -13,12 +13,17 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Remoto|etapa
+  8. State Machine - |identificador|op
   9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Port Connectivity Checks: "orgBits:G1"
- 13. Analysis & Synthesis Messages
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |identificador
+ 14. Parameter Settings for User Entity Instance: Remoto:G2
+ 15. Port Connectivity Checks: "Remoto:G2"
+ 16. Port Connectivity Checks: "bcdIn:G1"
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -44,16 +49,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 05 10:58:09 2018        ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 12 03:00:07 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; remote                                       ;
-; Top-level Entity Name              ; Remoto                                       ;
+; Top-level Entity Name              ; identificador                                ;
 ; Family                             ; Cyclone IV E                                 ;
-; Total logic elements               ; 50                                           ;
-;     Total combinational functions  ; 50                                           ;
-;     Dedicated logic registers      ; 31                                           ;
-; Total registers                    ; 31                                           ;
-; Total pins                         ; 19                                           ;
+; Total logic elements               ; 0                                            ;
+;     Total combinational functions  ; 0                                            ;
+;     Dedicated logic registers      ; 0                                            ;
+; Total registers                    ; 0                                            ;
+; Total pins                         ; 18                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -67,7 +72,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; Remoto             ; remote             ;
+; Top-level entity name                                                      ; identificador      ; remote             ;
 ; Family name                                                                ; Cyclone IV E       ; Stratix II         ;
 ; Use Generated Physical Constraints File                                    ; Off                ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -159,82 +164,119 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                             ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------+
-; orgBits.v                        ; yes             ; User Verilog HDL File  ; C:/Users/lfms/Documents/Controle_remoto/orgBits.v    ;
-; up_counter.v                     ; yes             ; User Verilog HDL File  ; C:/Users/lfms/Documents/Controle_remoto/up_counter.v ;
-; Remoto.v                         ; yes             ; User Verilog HDL File  ; C:/Users/lfms/Documents/Controle_remoto/Remoto.v     ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                   ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+
+; bcdIn.v                          ; yes             ; User Verilog HDL File  ; C:/Users/lfms/Downloads/Controle_remoto-master/bcdIn.v         ;
+; identificador.v                  ; yes             ; User Verilog HDL File  ; C:/Users/lfms/Downloads/Controle_remoto-master/identificador.v ;
+; Remoto.v                         ; yes             ; User Verilog HDL File  ; C:/Users/lfms/Downloads/Controle_remoto-master/Remoto.v        ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 50        ;
-;                                             ;           ;
-; Total combinational functions               ; 50        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 15        ;
-;     -- 3 input functions                    ; 6         ;
-;     -- <=2 input functions                  ; 29        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 26        ;
-;     -- arithmetic mode                      ; 24        ;
-;                                             ;           ;
-; Total registers                             ; 31        ;
-;     -- Dedicated logic registers            ; 31        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 19        ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 31        ;
-; Total fan-out                               ; 244       ;
-; Average fan-out                             ; 2.05      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 18    ;
+; Maximum fan-out node                        ; botao ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 18    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                           ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+--------------+
-; |Remoto                    ; 50 (25)           ; 31 (6)       ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |Remoto               ; work         ;
-;    |up_counter:G2|         ; 25 (25)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|up_counter:G2 ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |identificador             ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |identificador      ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------+
-; State Machine - |Remoto|etapa                                     ;
-+----------------+----------------+----------------+----------------+
-; Name           ; etapa.00000000 ; etapa.00000010 ; etapa.00000001 ;
-+----------------+----------------+----------------+----------------+
-; etapa.00000000 ; 0              ; 0              ; 0              ;
-; etapa.00000001 ; 1              ; 0              ; 1              ;
-; etapa.00000010 ; 1              ; 1              ; 0              ;
-+----------------+----------------+----------------+----------------+
++--------------------------------------------------------------------------------------------------+
+; State Machine - |identificador|op                                                                ;
++---------------+---------------+--------+---------+--------------+-----------+-----------+--------+
+; Name          ; op.muda_sinal ; op.sub ; op.soma ; op.zera_tudo ; op.zera_B ; op.zera_A ; op.000 ;
++---------------+---------------+--------+---------+--------------+-----------+-----------+--------+
+; op.000        ; 0             ; 0      ; 0       ; 0            ; 0         ; 0         ; 0      ;
+; op.zera_A     ; 0             ; 0      ; 0       ; 0            ; 0         ; 1         ; 1      ;
+; op.zera_B     ; 0             ; 0      ; 0       ; 0            ; 1         ; 0         ; 1      ;
+; op.zera_tudo  ; 0             ; 0      ; 0       ; 1            ; 0         ; 0         ; 1      ;
+; op.soma       ; 0             ; 0      ; 1       ; 0            ; 0         ; 0         ; 1      ;
+; op.sub        ; 0             ; 1      ; 0       ; 0            ; 0         ; 0         ; 1      ;
+; op.muda_sinal ; 1             ; 0      ; 0       ; 0            ; 0         ; 0         ; 1      ;
++---------------+---------------+--------+---------+--------------+-----------+-----------+--------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; etapa~6                               ; Lost fanout        ;
-; etapa~7                               ; Lost fanout        ;
-; etapa~8                               ; Lost fanout        ;
-; etapa~9                               ; Lost fanout        ;
-; etapa~10                              ; Lost fanout        ;
-; etapa~11                              ; Lost fanout        ;
-; Total Number of Removed Registers = 6 ;                    ;
-+---------------------------------------+--------------------+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; vetorA[5..7]                           ; Stuck at GND due to stuck port data_in      ;
+; seg_4_a[4]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; seg_4_a[5]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; seg_4_a[0]~reg0                        ; Stuck at VCC due to stuck port data_in      ;
+; op~9                                   ; Lost fanout                                 ;
+; op~10                                  ; Lost fanout                                 ;
+; op~11                                  ; Lost fanout                                 ;
+; op.000                                 ; Lost fanout                                 ;
+; op.zera_B                              ; Lost fanout                                 ;
+; op.zera_tudo                           ; Lost fanout                                 ;
+; op.soma                                ; Lost fanout                                 ;
+; op.sub                                 ; Lost fanout                                 ;
+; op.muda_sinal                          ; Lost fanout                                 ;
+; op.zera_A                              ; Stuck at GND due to stuck port data_in      ;
+; estado_a                               ; Stuck at GND due to stuck port data_in      ;
+; vetorA[0..4]                           ; Stuck at GND due to stuck port clock_enable ;
+; seg_3_a[0]~reg0                        ; Stuck at VCC due to stuck port data_in      ;
+; seg_3_a[1]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; seg_3_a[2]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; seg_3_a[3]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; seg_3_a[4]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; seg_3_a[5]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; seg_3_a[6]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; seg_4_a[1]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; seg_4_a[2]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; seg_4_a[3]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; seg_4_a[6]~reg0                        ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 33 ;                                             ;
++----------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                           ;
++---------------+--------------------------------+--------------------------------------------------------------------------------------+
+; Register name ; Reason for Removal             ; Registers Removed due to This Register                                               ;
++---------------+--------------------------------+--------------------------------------------------------------------------------------+
+; vetorA[5]     ; Stuck at GND                   ; seg_4_a[4]~reg0, seg_4_a[5]~reg0, seg_4_a[0]~reg0, seg_4_a[1]~reg0, seg_4_a[2]~reg0, ;
+;               ; due to stuck port data_in      ; seg_4_a[3]~reg0, seg_4_a[6]~reg0                                                     ;
+; vetorA[0]     ; Stuck at GND                   ; seg_3_a[0]~reg0, seg_3_a[1]~reg0, seg_3_a[2]~reg0, seg_3_a[3]~reg0, seg_3_a[4]~reg0, ;
+;               ; due to stuck port clock_enable ; seg_3_a[5]~reg0, seg_3_a[6]~reg0                                                     ;
+; op.zera_A     ; Stuck at GND                   ; estado_a, vetorA[1], vetorA[2], vetorA[3], vetorA[4]                                 ;
+;               ; due to stuck port data_in      ;                                                                                      ;
++---------------+--------------------------------+--------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -242,12 +284,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 31    ;
-; Number of registers using Synchronous Clear  ; 25    ;
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -257,18 +299,60 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Remoto|enable             ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Remoto|etapa              ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |identificador|op          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |identificador|op          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "orgBits:G1"                                                                         ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |identificador ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; zera_A         ; 001   ; Unsigned Binary                                      ;
+; zera_B         ; 010   ; Unsigned Binary                                      ;
+; zera_tudo      ; 011   ; Unsigned Binary                                      ;
+; soma           ; 100   ; Unsigned Binary                                      ;
+; sub            ; 101   ; Unsigned Binary                                      ;
+; muda_sinal     ; 110   ; Unsigned Binary                                      ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Remoto:G2 ;
++----------------+--------+------------------------------+
+; Parameter Name ; Value  ; Type                         ;
++----------------+--------+------------------------------+
+; inicial_0      ; 00     ; Unsigned Binary              ;
+; inicial_1      ; 01     ; Unsigned Binary              ;
+; leitura        ; 10     ; Unsigned Binary              ;
+; tempo_maximo   ; 262143 ; Signed Integer               ;
+; primeiro_0     ; 230000 ; Signed Integer               ;
+; segundo_0      ; 210000 ; Signed Integer               ;
+; tempo_bit_0    ; 41500  ; Signed Integer               ;
+; tempo_bit      ; 20000  ; Signed Integer               ;
++----------------+--------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Remoto:G2"                                                                                   ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; saida_leitura ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bcdIn:G1"                                                                                                                                                                              ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; sinal     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; sinal[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -277,55 +361,107 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Jun 05 10:58:08 2018
+    Info: Processing started: Tue Jun 12 03:00:06 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off remote -c remote
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info: Found 1 design units, including 1 entities, in source file orgbits.v
-    Info: Found entity 1: orgBits
-Info: Found 1 design units, including 1 entities, in source file up_counter.v
-    Info: Found entity 1: up_counter
+Info: Found 1 design units, including 1 entities, in source file bcdin.v
+    Info: Found entity 1: bcdIn
+Info: Found 1 design units, including 1 entities, in source file identificador.v
+    Info: Found entity 1: identificador
 Info: Found 1 design units, including 1 entities, in source file remoto.v
     Info: Found entity 1: Remoto
-Info: Elaborating entity "Remoto" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(7): object "cont" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(14): object "tempo" assigned a value but never read
-Warning (10034): Output port "comparador" at Remoto.v(3) has no driver
-Info: Elaborating entity "up_counter" for hierarchy "up_counter:G2"
-Warning (10230): Verilog HDL assignment warning at up_counter.v(12): truncated value with size 32 to match size of target (25)
-Info: Elaborating entity "orgBits" for hierarchy "orgBits:G1"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(63): created implicit net for "a"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(63): created implicit net for "b"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(63): created implicit net for "c"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(63): created implicit net for "d"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(63): created implicit net for "e"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(63): created implicit net for "f"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(63): created implicit net for "g"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(64): created implicit net for "a1"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(64): created implicit net for "b1"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(64): created implicit net for "c1"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(64): created implicit net for "d1"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(64): created implicit net for "e1"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(64): created implicit net for "f1"
+Warning (10236): Verilog HDL Implicit Net warning at bcdIn.v(64): created implicit net for "g1"
+Info: Elaborating entity "identificador" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at identificador.v(8): object "a" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at identificador.v(8): object "b" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at identificador.v(9): object "aV" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at identificador.v(10): object "bV" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at identificador.v(15): object "operacao" assigned a value but never read
+Warning (10199): Verilog HDL Case Statement warning at identificador.v(48): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at identificador.v(49): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at identificador.v(50): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at identificador.v(51): case item expression never matches the case expression
+Warning (10199): Verilog HDL Case Statement warning at identificador.v(52): case item expression never matches the case expression
+Warning (10230): Verilog HDL assignment warning at identificador.v(63): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at identificador.v(69): truncated value with size 2 to match size of target (1)
+Info: Elaborating entity "bcdIn" for hierarchy "bcdIn:G1"
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(63): object "a" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(63): object "b" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(63): object "c" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(63): object "d" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(63): object "e" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(63): object "f" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(63): object "g" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(64): object "a1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(64): object "b1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(64): object "c1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(64): object "d1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(64): object "e1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(64): object "f1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at bcdIn.v(64): object "g1" assigned a value but never read
+Info: Elaborating entity "Remoto" for hierarchy "Remoto:G2"
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(17): object "saida" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at Remoto.v(62): truncated value with size 32 to match size of target (2)
+Warning (10199): Verilog HDL Case Statement warning at Remoto.v(63): case item expression never matches the case expression
+Warning (10034): Output port "saida_leitura" at Remoto.v(15) has no driver
+Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "comando[0]" is stuck at GND
-    Warning (13410): Pin "comando[1]" is stuck at GND
-    Warning (13410): Pin "comando[2]" is stuck at GND
-    Warning (13410): Pin "comando[3]" is stuck at GND
-    Warning (13410): Pin "comando[4]" is stuck at GND
-    Warning (13410): Pin "comando[5]" is stuck at GND
-    Warning (13410): Pin "comando[6]" is stuck at GND
-    Warning (13410): Pin "comando[7]" is stuck at GND
-    Warning (13410): Pin "comparador[0]" is stuck at GND
-    Warning (13410): Pin "comparador[1]" is stuck at GND
-    Warning (13410): Pin "comparador[2]" is stuck at GND
-    Warning (13410): Pin "comparador[3]" is stuck at GND
-    Warning (13410): Pin "comparador[4]" is stuck at GND
-    Warning (13410): Pin "comparador[5]" is stuck at GND
-    Warning (13410): Pin "comparador[6]" is stuck at GND
-    Warning (13410): Pin "comparador[7]" is stuck at GND
-Info: Timing-Driven Synthesis is running
-Info: 6 registers lost all their fanouts during netlist optimizations. The first 6 are displayed below.
-    Info: Register "etapa~6" lost all its fanouts during netlist optimizations.
-    Info: Register "etapa~7" lost all its fanouts during netlist optimizations.
-    Info: Register "etapa~8" lost all its fanouts during netlist optimizations.
-    Info: Register "etapa~9" lost all its fanouts during netlist optimizations.
-    Info: Register "etapa~10" lost all its fanouts during netlist optimizations.
-    Info: Register "etapa~11" lost all its fanouts during netlist optimizations.
-Info: Implemented 70 device resources after synthesis - the final resource count might be different
-    Info: Implemented 2 input pins
-    Info: Implemented 17 output pins
-    Info: Implemented 51 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 225 megabytes
-    Info: Processing ended: Tue Jun 05 10:58:10 2018
-    Info: Elapsed time: 00:00:02
+    Warning (13410): Pin "seg_3_a[0]" is stuck at VCC
+    Warning (13410): Pin "seg_3_a[1]" is stuck at GND
+    Warning (13410): Pin "seg_3_a[2]" is stuck at GND
+    Warning (13410): Pin "seg_3_a[3]" is stuck at GND
+    Warning (13410): Pin "seg_3_a[4]" is stuck at GND
+    Warning (13410): Pin "seg_3_a[5]" is stuck at GND
+    Warning (13410): Pin "seg_3_a[6]" is stuck at GND
+    Warning (13410): Pin "seg_4_a[0]" is stuck at VCC
+    Warning (13410): Pin "seg_4_a[1]" is stuck at GND
+    Warning (13410): Pin "seg_4_a[2]" is stuck at GND
+    Warning (13410): Pin "seg_4_a[3]" is stuck at GND
+    Warning (13410): Pin "seg_4_a[4]" is stuck at GND
+    Warning (13410): Pin "seg_4_a[5]" is stuck at GND
+    Warning (13410): Pin "seg_4_a[6]" is stuck at GND
+Info: 9 registers lost all their fanouts during netlist optimizations. The first 9 are displayed below.
+    Info: Register "op~9" lost all its fanouts during netlist optimizations.
+    Info: Register "op~10" lost all its fanouts during netlist optimizations.
+    Info: Register "op~11" lost all its fanouts during netlist optimizations.
+    Info: Register "op.000" lost all its fanouts during netlist optimizations.
+    Info: Register "op.zera_B" lost all its fanouts during netlist optimizations.
+    Info: Register "op.zera_tudo" lost all its fanouts during netlist optimizations.
+    Info: Register "op.soma" lost all its fanouts during netlist optimizations.
+    Info: Register "op.sub" lost all its fanouts during netlist optimizations.
+    Info: Register "op.muda_sinal" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file C:/Users/lfms/Downloads/Controle_remoto-master/remote.map.smsg
+Warning: Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "botao"
+    Warning (15610): No output dependent on input pin "sinal"
+    Warning (15610): No output dependent on input pin "clk"
+    Warning (15610): No output dependent on input pin "entrada"
+Info: Implemented 18 device resources after synthesis - the final resource count might be different
+    Info: Implemented 4 input pins
+    Info: Implemented 14 output pins
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 218 megabytes
+    Info: Processing ended: Tue Jun 12 03:00:07 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/lfms/Downloads/Controle_remoto-master/remote.map.smsg.
 
 
