@@ -1,82 +1,126 @@
-module identificador(botao,sinal,clk,entrada,seg_3_a,seg_4_a);
-input botao;
-input sinal;
-input clk;
-input entrada;
-output reg [6:0] seg_3_a;
-output reg [6:0] seg_4_a;
-reg a,b;
-reg [2:0] aV;
-reg [2:0] bV;
-reg [2:0] op;
-reg on,estado_a;
-wire [7:0]comando;
-reg [7:0]vetorA;
-reg [2:0]operacao;
-parameter zera_A    = 3'b001;
-parameter zera_B    = 3'b010;
-parameter zera_tudo = 3'b011;
-parameter soma      = 3'b100;
-parameter sub       = 3'b101;
-parameter muda_sinal= 3'b110;
-wire [6:0] seg_1_a;
-wire [6:0] seg_2_a;
+module Remoto(clk,entrada,led,comando);
 
-bcdIn G1 (seg_1_a,seg_2_a,vetorA[3:0],vetorA[7:4],0);
-Remoto G2(clk,entrada,sinal,comando);
+parameter IDLE               = 2'b00;   
+parameter GUIDANCE           = 2'b01;    
+parameter DATAREAD           = 2'b10;  
+
+parameter IDLE_HIGH_DUR      =  262143; 
+parameter GUIDE_LOW_DUR      =  230000;  
+parameter GUIDE_HIGH_DUR     =  210000;  
+parameter DATA_HIGH_DUR      =  41500;
+parameter BIT_AVAILABLE_DUR  =  20000;
+
+input         clk;      
+input         entrada;    
+output reg led;
+output reg [7:0] comando;
+reg [31:0]delay_on;
+reg conta_on,on;
+reg    [31:0] oDATA;              
+reg    [17:0] idle_count;            
+reg           idle_count_flag;      
+
+reg    [17:0] state_count;           
+reg           state_count_flag;    
+reg    [17:0] data_count;           
+reg           data_count_flag;     
+reg     [5:0] bitcount;              
+reg     [1:0] state;             
+reg    [31:0] data;                
+reg    [31:0] data_buf;           
+reg           data_ready;          
 initial begin
-	a=0;
-	b=0;
-	aV=0;
-	bV=0;
-	on<=0;
-	operacao <= 0;
+	on = 0;
+	led =0;
+	conta_on = 0;
+end
+always @(posedge clk) begin
+	if (conta_on) begin
+		delay_on = delay_on + 1'b1;
+	end
+	else begin
+		delay_on <=0;
+	end
+end
+always @(posedge clk) begin
+	if (comando == 8'b00010010 && delay_on == 0) begin
+		on <= ~on;
+		conta_on<=1;
+		led=1;
+	end
+	else if(delay_on > 20000) begin
+		conta_on <=0;
+	end
 end
 
-always @(posedge clk) begin
-	if (comando == 8'b01001000) begin
-		on <= ~on;
-	end
-end
-always @(posedge clk) begin
-	if(on)begin
-		if(comando < 10)begin
-			operacao <= 3'b001;
+
+
+
+always @(posedge clk )
+if ((state == IDLE) && !entrada)
+			 idle_count <= idle_count + 1'b1;
+		else                           
+			 idle_count <= 0;	              		 	
+
+always @(posedge clk)	
+if ((state == GUIDANCE) && entrada)
+			 state_count <= state_count + 1'b1;
+		else  
+			 state_count <= 0;	            		 	
+
+always @(posedge clk )
+if ((state == DATAREAD) && entrada)
+			 data_count <= data_count + 1'b1;
+		else
+			 data_count <= 1'b0;        
+
+always @(posedge clk)
+if (state == DATAREAD)
+		begin
+			if (data_count == 20000)
+					bitcount <= bitcount + 1'b1; 
+		end   
+	  else
+	     bitcount <= 6'b0;
+
+always @(posedge clk) 
+			case (state)
+ 			    IDLE     : if (idle_count > GUIDE_LOW_DUR)  
+			  	              state <= GUIDANCE; 
+			    GUIDANCE : if (state_count > GUIDE_HIGH_DUR)
+			  	              state <= DATAREAD;
+			    DATAREAD : if ((data_count >= IDLE_HIGH_DUR) || (bitcount >= 33))
+			  					      state <= IDLE;
+	        default  : state <= IDLE; 
+			 endcase
+
+always @(posedge clk)
+	  if (state == DATAREAD)
+		begin
+			 if (data_count >= DATA_HIGH_DUR) 
+			    data[bitcount-1'b1] <= 1'b1;  
 		end
-		else begin
-			case(comando)
-				00001111:op <= zera_A;// 0x0F Zera A
-				00010011:op <= zera_B;// 0x13 Zera B
-				00010000:op <= zera_tudo;// 0x10 Zera tudo
-				00011010:op <= soma;// 0x1A Soma
-				00011110:op <= sub;// 0x1E Sub
-				00000110:op <= muda_sinal;// 0x0C muda sinal
-				default: op<=0;
-			endcase
+		else
+			 data <= 0;
+	
+always @(posedge clk) 
+	  if (bitcount == 32)   
+		begin
+			 if (data[31:24] == ~data[23:16])
+			 begin		
+					comando[7:0] <= data[23:16]; 
+					data_buf <= data;
+				  data_ready <= 1'b1;
+			 end	
+			 else
+				  data_ready <= 1'b0 ;
 		end
-	end
-	seg_3_a <= seg_1_a;
-	seg_4_a <= seg_2_a;
-end
-always @(posedge clk) begin
-	if (op==zera_A) begin
-		estado_a <= 2'b01;
-	end
-	else if(estado_a == 2'b01) begin
-		if(op!=zera_A && comando < 10)begin
-			vetorA <= comando;
-		end
-		estado_a<=2'b10;
-	end
-	else if(estado_a==2'b10)begin
-		if(comando > 9)begin
-			estado_a <= 0;
-		end
-		else begin
-			estado_a = estado_a * 10;
-			estado_a = estado_a + comando;
-			estado_a <= 0;
-		end
-	end
-end
+		else
+		   data_ready <= 1'b0 ;
+
+always @(posedge clk)
+
+	  if (data_ready)
+	     oDATA <= data_buf; 
+					
 endmodule

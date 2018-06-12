@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY identificador
+set_global_assignment -name TOP_LEVEL_ENTITY Remoto
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:44:38  JUNE 05, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
@@ -54,25 +54,49 @@ set_location_assignment PIN_Y2 -to clk
 set_global_assignment -name MISC_FILE "C:/Users/lfms/Documents/Controle_remoto/remote.dpf"
 set_location_assignment PIN_Y15 -to entrada
 set_global_assignment -name MISC_FILE "C:/Users/lfms/Downloads/Controle_remoto-master/remote.dpf"
+set_global_assignment -name VERILOG_FILE bcdIn.v
+set_global_assignment -name VERILOG_FILE identificador.v
+set_global_assignment -name VERILOG_FILE Remoto.v
+set_location_assignment PIN_AA14 -to sd[0]
+set_location_assignment PIN_AG18 -to sd[1]
+set_location_assignment PIN_AF17 -to sd[2]
+set_location_assignment PIN_AH17 -to sd[3]
+set_location_assignment PIN_AG17 -to sd[4]
+set_location_assignment PIN_AE17 -to sd[5]
+set_location_assignment PIN_AD17 -to sd[6]
+set_location_assignment PIN_AC17 -to su[0]
+set_location_assignment PIN_AA15 -to su[1]
+set_location_assignment PIN_AB15 -to su[2]
+set_location_assignment PIN_AB17 -to su[3]
+set_location_assignment PIN_AA16 -to su[4]
+set_location_assignment PIN_AB16 -to su[5]
+set_location_assignment PIN_AA17 -to su[6]
+set_location_assignment PIN_F17 -to led
+set_location_assignment PIN_G19 -to comando[0]
+set_location_assignment PIN_F19 -to comando[1]
+set_location_assignment PIN_E19 -to comando[2]
+set_location_assignment PIN_F21 -to comando[3]
+set_location_assignment PIN_F18 -to comando[4]
+set_location_assignment PIN_E18 -to comando[5]
+set_location_assignment PIN_J19 -to comando[6]
+set_location_assignment PIN_H19 -to comando[7]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name VERILOG_FILE bcdIn.v
-set_global_assignment -name VERILOG_FILE identificador.v
-set_global_assignment -name VERILOG_FILE Remoto.v
-set_location_assignment PIN_G18 -to seg_3_a[0]
-set_location_assignment PIN_F22 -to seg_3_a[1]
-set_location_assignment PIN_E17 -to seg_3_a[2]
-set_location_assignment PIN_L26 -to seg_3_a[3]
-set_location_assignment PIN_L25 -to seg_3_a[4]
-set_location_assignment PIN_J22 -to seg_3_a[5]
-set_location_assignment PIN_H22 -to seg_3_a[6]
-set_location_assignment PIN_M24 -to seg_4_a[0]
-set_location_assignment PIN_Y22 -to seg_4_a[1]
-set_location_assignment PIN_W21 -to seg_4_a[2]
-set_location_assignment PIN_W22 -to seg_4_a[3]
-set_location_assignment PIN_W25 -to seg_4_a[4]
-set_location_assignment PIN_U23 -to seg_4_a[5]
-set_location_assignment PIN_U24 -to seg_4_a[6]
+set_location_assignment PIN_AB19 -to suB[6]
+set_location_assignment PIN_AA19 -to suB[5]
+set_location_assignment PIN_AG21 -to suB[4]
+set_location_assignment PIN_AH21 -to suB[3]
+set_location_assignment PIN_AE19 -to suB[2]
+set_location_assignment PIN_AF19 -to suB[1]
+set_location_assignment PIN_AE18 -to suB[0]
+set_location_assignment PIN_AD18 -to sdB[6]
+set_location_assignment PIN_AC18 -to sdB[5]
+set_location_assignment PIN_AB18 -to sdB[4]
+set_location_assignment PIN_AH19 -to sdB[3]
+set_location_assignment PIN_AG19 -to sdB[2]
+set_location_assignment PIN_AF18 -to sdB[1]
+set_location_assignment PIN_AH18 -to sdB[0]
+set_location_assignment PIN_E21 -to led2
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
