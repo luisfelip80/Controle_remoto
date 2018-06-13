@@ -1,1 +1,5 @@
-Info (10281): Verilog HDL Declaration information at Remoto.v(11): object "sub" differs only in case from object "suB" in the same scope
+Warning (10268): Verilog HDL information at Remoto.v(160): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Remoto.v(261): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Remoto.v(320): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at Remoto.v(8): object "zera_tudo" differs only in case from object "ZERA_TUDO" in the same scope
+Info (10281): Verilog HDL Declaration information at Remoto.v(10): object "sub" differs only in case from object "suB" in the same scope

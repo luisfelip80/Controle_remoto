@@ -1,9 +1,8 @@
-module bcdout(saida,saida1,saida2,in,enable);
+module bcdout(saida,saida1,saida2,in);
 	input [8:0] in;
-	output reg [6:0]saida;
-	output reg [6:0]saida1;
-	output reg [6:0]saida2;
-	input enable;
+	output [6:0]saida;
+	output [6:0]saida1;
+	output [6:0]saida2;
 	reg sinal;
 	reg [7:0]uni;
 	reg [7:0]dez;
@@ -14,13 +13,12 @@ module bcdout(saida,saida1,saida2,in,enable);
 
 	
 	always begin
-		if (enable) begin
-			sinal = in[8];
-			aux = in[7:0];
-			uni = aux%10;
-			dezz = aux%100;
-			dez = dezz/10;
-			cen = aux/100;
+			sinal <= in[8];
+			aux <= in[7:0];
+			uni <= aux%10;
+			dezz <= aux%100;
+			dez <= dezz/10;
+			cen <= aux/100;
 			
 			case(uni)
 				8'b00000000: 
@@ -83,12 +81,6 @@ module bcdout(saida,saida1,saida2,in,enable);
 					saida2 = 7'b11111110;
         endcase
 
-		end
-		else begin
-				saida = 7'b11111111;
-				saida1 = 7'b11111111;
-				saida2 = 7'b11111111;
-			end	
 
 	end
 

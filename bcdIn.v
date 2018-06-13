@@ -1,62 +1,96 @@
-module bcdIn(i,j,su,sd);
-	output reg[6:0] su;
-	output reg[6:0] sd;
-	input [7:0]i;
-	input [7:0]j;
-	
-	
-	always 
-		begin
-	
-		case(i)
-				0: 
-					su = 7'b0000001;
-	            1: 
-					su = 7'b1001111;
-	            2: 
-					su = 7'b0010010;
-	            3: 
-					su = 7'b0000110;
-	            4: 
-					su = 7'b1001100;
-	            5: 
-					su = 7'b0100100;
-	            6: 
-					su = 7'b0100000;
-	            7: 
-					su = 7'b0001111;
-	            8: 
-					su = 7'b0000000;
-	            9: 
-					su = 7'b0000100;
-				default:
-					su = 7'b0000001;
-        endcase
-        
-        case(j)
-	        	0: 
-	        		sd = 7'b0000001;
-		        1: 
-		        	sd = 7'b1001111;
-		        2: 
-		        	sd = 7'b0010010;
-		        3: 
-		        	sd = 7'b0000110;
-		        4: 
-		        	sd = 7'b1001100;
-		        5: 
-		        	sd = 7'b0100100;
-		        6: 
-		        	sd = 7'b0100000;
-		        7: 
-		        	sd = 7'b0001111;
-		        8: 
-		        	sd = 7'b0000000;
-		        9: 
-		        	sd = 7'b0000100;
-		        default:
-					sd = 7'b0000001;
+module ula(clock,a,b,r,op,sb,sa);
+	input [7:0]a;
+	input [7:0]b;
+	input op;
+	input clock;
+	output [8:0]r;
+	output sa, sb;
+	reg saa;
+	reg sbb;
+	reg sinal;
+	reg enable;
+	reg [6:0]aa;
+	reg [6:0]bb;
+	reg [7:0]rr;
 
+	always @(posedge clock) begin
+		saa = a[7];
+		sbb = b[7];
+		aa = a[6:0];
+		bb = b[6:0];
+
+
+		case(op)
+			0: begin
+				if(saa == 0 && sbb == 0)begin
+					rr = aa + bb;
+					sinal = 0;
+				end
+				if(saa == 1 && sbb == 0)begin
+					if(aa > bb)begin
+						rr = aa - bb;
+						sinal = saa;
+					end
+					else begin
+						rr = bb - aa;
+						sinal = sbb;
+					end
+				end
+				if(saa == 0 && sbb == 1)begin
+					if(aa > bb)begin
+						rr = aa - bb;
+						sinal = saa;
+					end
+					else begin
+						rr = bb - aa;
+						sinal = sbb;
+					end
+				end
+				if(saa == 1 && sbb == 1)begin
+					rr = aa + bb;
+					sinal = 1;
+				end
+			end	
+			1: begin
+			sbb = ~sbb;
+			if(saa == 0 && sbb == 0)begin
+					rr = aa + bb;
+					sinal = 0;
+				end
+				if(saa == 1 && sbb == 0)begin
+					if(aa > bb)begin
+						rr = aa - bb;
+						sinal = saa;
+					end
+					else begin
+						rr = bb - aa;
+						sinal = sbb;
+					end
+				end
+				if(saa == 0 && sbb == 1)begin
+					if(aa > bb)begin
+						rr = aa - bb;
+						sinal = saa;
+					end
+					else begin
+						rr = bb - aa;
+						sinal = sbb;
+					end
+				end
+				if(saa == 1 && sbb == 1)begin
+					rr = aa + bb;
+					sinal = 1;
+				end
+			end	
 		endcase
+
+
 	end
+
+	assign r[8] = sinal;
+	assign r[7:0] = rr;
+	assign sa = saa;
+	assign sb = sbb;
+
+
 endmodule

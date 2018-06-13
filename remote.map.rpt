@@ -1,5 +1,5 @@
 Analysis & Synthesis report for remote
-Tue Jun 12 15:41:13 2018
+Wed Jun 13 02:00:22 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -13,19 +13,20 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
+  8. State Machine - |Remoto|estado
   9. State Machine - |Remoto|state
  10. Registers Removed During Synthesis
  11. General Register Statistics
  12. Inverted Register Statistics
- 13. Registers Packed Into Inferred Megafunctions
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for altsyncram:WideOr6_rtl_0|altsyncram_odv:auto_generated
- 16. Parameter Settings for User Entity Instance: Top-level Entity: |Remoto
- 17. Parameter Settings for Inferred Entity Instance: altsyncram:WideOr6_rtl_0
- 18. altsyncram Parameter Settings by Entity Instance
- 19. Analysis & Synthesis Messages
- 20. Analysis & Synthesis Suppressed Messages
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |Remoto
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 17. Parameter Settings for Inferred Entity Instance: bcdout:G2|lpm_divide:Mod0
+ 18. Parameter Settings for Inferred Entity Instance: bcdout:G2|lpm_divide:Mod1
+ 19. Port Connectivity Checks: "ula:G1"
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,18 +52,18 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 12 15:41:13 2018        ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 13 02:00:22 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; remote                                       ;
 ; Top-level Entity Name              ; Remoto                                       ;
 ; Family                             ; Cyclone IV E                                 ;
-; Total logic elements               ; 164                                          ;
-;     Total combinational functions  ; 163                                          ;
-;     Dedicated logic registers      ; 98                                           ;
-; Total registers                    ; 98                                           ;
-; Total pins                         ; 40                                           ;
+; Total logic elements               ; 804                                          ;
+;     Total combinational functions  ; 787                                          ;
+;     Dedicated logic registers      ; 165                                          ;
+; Total registers                    ; 165                                          ;
+; Total pins                         ; 71                                           ;
 ; Total virtual pins                 ; 0                                            ;
-; Total memory bits                  ; 1,792                                        ;
+; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
 ; Total PLLs                         ; 0                                            ;
 +------------------------------------+----------------------------------------------+
@@ -166,15 +167,24 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+
-; Remoto.v                         ; yes             ; User Verilog HDL File        ; C:/Users/lfms/Downloads/Controle_remoto-master/Remoto.v              ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf       ;
-; db/altsyncram_odv.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/altsyncram_odv.tdf ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
+; bcdout.v                         ; yes             ; User Verilog HDL File        ; C:/Users/lfms/Downloads/Controle_remoto-master/bcdout.v                   ;
+; ula.v                            ; yes             ; User Verilog HDL File        ; C:/Users/lfms/Downloads/Controle_remoto-master/ula.v                      ;
+; Remoto.v                         ; yes             ; User Verilog HDL File        ; C:/Users/lfms/Downloads/Controle_remoto-master/Remoto.v                   ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_divide.tdf            ;
+; db/lpm_divide_m9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/lpm_divide_m9m.tdf      ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/sign_div_unsign_bkh.tdf ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/alt_u_div_a4f.tdf       ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/add_sub_7pc.tdf         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/add_sub_8pc.tdf         ;
+; db/lpm_divide_p9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/lpm_divide_p9m.tdf      ;
+; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/sign_div_unsign_ekh.tdf ;
+; db/alt_u_div_g4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/alt_u_div_g4f.tdf       ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------+
@@ -182,93 +192,101 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 164       ;
+; Estimated Total logic elements              ; 804       ;
 ;                                             ;           ;
-; Total combinational functions               ; 163       ;
+; Total combinational functions               ; 787       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 65        ;
-;     -- 3 input functions                    ; 18        ;
-;     -- <=2 input functions                  ; 80        ;
+;     -- 4 input functions                    ; 323       ;
+;     -- 3 input functions                    ; 181       ;
+;     -- <=2 input functions                  ; 283       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 107       ;
-;     -- arithmetic mode                      ; 56        ;
+;     -- normal mode                          ; 586       ;
+;     -- arithmetic mode                      ; 201       ;
 ;                                             ;           ;
-; Total registers                             ; 98        ;
-;     -- Dedicated logic registers            ; 98        ;
+; Total registers                             ; 165       ;
+;     -- Dedicated logic registers            ; 165       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 40        ;
-; Total memory bits                           ; 1792      ;
+; I/O pins                                    ; 71        ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 105       ;
-; Total fan-out                               ; 885       ;
-; Average fan-out                             ; 2.54      ;
+; Maximum fan-out                             ; 165       ;
+; Total fan-out                               ; 2995      ;
+; Average fan-out                             ; 2.74      ;
 +---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                               ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Library Name ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
-; |Remoto                               ; 163 (163)         ; 98 (98)      ; 1792        ; 0            ; 0       ; 0         ; 40   ; 0            ; |Remoto                                                        ; work         ;
-;    |altsyncram:WideOr6_rtl_0|         ; 0 (0)             ; 0 (0)        ; 1792        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|altsyncram:WideOr6_rtl_0                               ;              ;
-;       |altsyncram_odv:auto_generated| ; 0 (0)             ; 0 (0)        ; 1792        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|altsyncram:WideOr6_rtl_0|altsyncram_odv:auto_generated ;              ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                      ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
+; |Remoto                                   ; 787 (448)         ; 165 (156)    ; 0           ; 0            ; 0       ; 0         ; 71   ; 0            ; |Remoto                                                                                                           ; work         ;
+;    |bcdout:G2|                            ; 180 (87)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2                                                                                                 ;              ;
+;       |lpm_divide:Mod0|                   ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0                                                                                 ;              ;
+;          |lpm_divide_m9m:auto_generated|  ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0|lpm_divide_m9m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_bkh:divider| ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                       ;              ;
+;                |alt_u_div_a4f:divider|    ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ;              ;
+;       |lpm_divide:Mod1|                   ; 34 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1                                                                                 ;              ;
+;          |lpm_divide_p9m:auto_generated|  ; 34 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_ekh:divider| ; 34 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider                       ;              ;
+;                |alt_u_div_g4f:divider|    ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider ;              ;
+;    |lpm_divide:Mod0|                      ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0                                                                                           ;              ;
+;       |lpm_divide_m9m:auto_generated|     ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated                                                             ;              ;
+;          |sign_div_unsign_bkh:divider|    ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                                 ;              ;
+;             |alt_u_div_a4f:divider|       ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider           ;              ;
+;    |lpm_divide:Mod1|                      ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1                                                                                           ;              ;
+;       |lpm_divide_m9m:auto_generated|     ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_m9m:auto_generated                                                             ;              ;
+;          |sign_div_unsign_bkh:divider|    ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                                 ;              ;
+;             |alt_u_div_a4f:divider|       ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider           ;              ;
+;    |ula:G1|                               ; 41 (41)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|ula:G1                                                                                                    ;              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                            ;
-+-------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------+
-; Name                                                              ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                    ;
-+-------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------+
-; altsyncram:WideOr6_rtl_0|altsyncram_odv:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 7            ; --           ; --           ; 1792 ; remote.Remoto0.rtl.mif ;
-+-------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Remoto|estado                                                                                                                                                                                      ;
++-----------------------+---------------------+-----------------------+-----------------------+---------------------+---------------------+---------------------+---------------+------------------+------------------+
+; Name                  ; estado.MUDA_SINAL_B ; estado.RECEBE_A_UNI_B ; estado.RECEBE_A_DEZ_B ; estado.MUDA_SINAL_A ; estado.RECEBE_A_UNI ; estado.RECEBE_A_DEZ ; estado.ESPERA ; estado.DESLIGADO ; estado.ZERA_TUDO ;
++-----------------------+---------------------+-----------------------+-----------------------+---------------------+---------------------+---------------------+---------------+------------------+------------------+
+; estado.DESLIGADO      ; 0                   ; 0                     ; 0                     ; 0                   ; 0                   ; 0                   ; 0             ; 0                ; 0                ;
+; estado.ESPERA         ; 0                   ; 0                     ; 0                     ; 0                   ; 0                   ; 0                   ; 1             ; 1                ; 0                ;
+; estado.RECEBE_A_DEZ   ; 0                   ; 0                     ; 0                     ; 0                   ; 0                   ; 1                   ; 0             ; 1                ; 0                ;
+; estado.RECEBE_A_UNI   ; 0                   ; 0                     ; 0                     ; 0                   ; 1                   ; 0                   ; 0             ; 1                ; 0                ;
+; estado.MUDA_SINAL_A   ; 0                   ; 0                     ; 0                     ; 1                   ; 0                   ; 0                   ; 0             ; 1                ; 0                ;
+; estado.RECEBE_A_DEZ_B ; 0                   ; 0                     ; 1                     ; 0                   ; 0                   ; 0                   ; 0             ; 1                ; 0                ;
+; estado.RECEBE_A_UNI_B ; 0                   ; 1                     ; 0                     ; 0                   ; 0                   ; 0                   ; 0             ; 1                ; 0                ;
+; estado.MUDA_SINAL_B   ; 1                   ; 0                     ; 0                     ; 0                   ; 0                   ; 0                   ; 0             ; 1                ; 0                ;
+; estado.ZERA_TUDO      ; 0                   ; 0                     ; 0                     ; 0                   ; 0                   ; 0                   ; 0             ; 1                ; 1                ;
++-----------------------+---------------------+-----------------------+-----------------------+---------------------+---------------------+---------------------+---------------+------------------+------------------+
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------+
-; State Machine - |Remoto|state                                 ;
-+----------------+------------+----------------+----------------+
-; Name           ; state.IDLE ; state.DATAREAD ; state.GUIDANCE ;
-+----------------+------------+----------------+----------------+
-; state.IDLE     ; 0          ; 0              ; 0              ;
-; state.GUIDANCE ; 1          ; 0              ; 1              ;
-; state.DATAREAD ; 1          ; 1              ; 0              ;
-+----------------+------------+----------------+----------------+
++----------------------------------------------------------------+
+; State Machine - |Remoto|state                                  ;
++----------------+--------------+---------------+----------------+
+; Name           ; state.inicia ; state.leitura ; state.inicia_1 ;
++----------------+--------------+---------------+----------------+
+; state.inicia   ; 0            ; 0             ; 0              ;
+; state.inicia_1 ; 1            ; 0             ; 1              ;
+; state.leitura  ; 1            ; 1             ; 0              ;
++----------------+--------------+---------------+----------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; su[6]~reg0                             ; Stuck at VCC due to stuck port data_in ;
-; su[5]~reg0                             ; Stuck at VCC due to stuck port data_in ;
-; su[4]~reg0                             ; Stuck at VCC due to stuck port data_in ;
-; su[3]~reg0                             ; Stuck at VCC due to stuck port data_in ;
-; su[2]~reg0                             ; Stuck at VCC due to stuck port data_in ;
-; su[1]~reg0                             ; Stuck at VCC due to stuck port data_in ;
-; su[0]~reg0                             ; Stuck at VCC due to stuck port data_in ;
-; suB[6]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; suB[5]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; suB[4]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; suB[3]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; suB[2]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; suB[1]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; suB[0]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; sdB[6]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; sdB[5]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; sdB[4]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; sdB[3]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; sdB[2]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; sdB[1]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; sdB[0]~reg0                            ; Stuck at VCC due to stuck port data_in ;
-; led~reg0                               ; Merged with on                         ;
-; Total Number of Removed Registers = 22 ;                                        ;
-+----------------------------------------+----------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; sinal_B~reg0                          ; Stuck at GND due to stuck port data_in ;
+; sinal_A~reg0                          ; Stuck at GND due to stuck port data_in ;
+; estado~11                             ; Lost fanout                            ;
+; estado~12                             ; Lost fanout                            ;
+; estado~13                             ; Lost fanout                            ;
+; estado~15                             ; Lost fanout                            ;
+; Total Number of Removed Registers = 6 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -276,67 +294,58 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 98    ;
+; Total registers                              ; 165   ;
 ; Number of registers using Synchronous Clear  ; 76    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 79    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; vetorA_2[0]                            ; 1       ;
-; vetorA_2[1]                            ; 1       ;
-; vetorA_2[2]                            ; 1       ;
-; vetorA_2[3]                            ; 1       ;
-; vetorA_2[4]                            ; 1       ;
-; vetorA_2[5]                            ; 1       ;
-; vetorA_2[6]                            ; 1       ;
-; vetorA_2[7]                            ; 1       ;
-; a                                      ; 2       ;
-; Total number of inverted registers = 9 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; vetorA[5]                               ; 18      ;
+; vetorA[4]                               ; 25      ;
+; vetorA[3]                               ; 20      ;
+; vetorA[2]                               ; 19      ;
+; vetorA[0]                               ; 17      ;
+; vetorA[1]                               ; 17      ;
+; vetorA[7]                               ; 13      ;
+; vetorA[6]                               ; 22      ;
+; vetorB[5]                               ; 18      ;
+; vetorB[4]                               ; 24      ;
+; vetorB[3]                               ; 20      ;
+; vetorB[2]                               ; 19      ;
+; vetorB[0]                               ; 17      ;
+; vetorB[1]                               ; 17      ;
+; vetorB[7]                               ; 14      ;
+; vetorB[6]                               ; 21      ;
+; op[0]                                   ; 3       ;
+; Total number of inverted registers = 17 ;         ;
++-----------------------------------------+---------+
 
 
-+----------------------------------------------+
-; Registers Packed Into Inferred Megafunctions ;
-+---------------+--------------+---------------+
-; Register Name ; Megafunction ; Type          ;
-+---------------+--------------+---------------+
-; sd[6]~reg0    ; WideOr6~0    ; ROM           ;
-; sd[5]~reg0    ; WideOr6~0    ; ROM           ;
-; sd[4]~reg0    ; WideOr6~0    ; ROM           ;
-; sd[3]~reg0    ; WideOr6~0    ; ROM           ;
-; sd[2]~reg0    ; WideOr6~0    ; ROM           ;
-; sd[1]~reg0    ; WideOr6~0    ; ROM           ;
-; sd[0]~reg0    ; WideOr6~0    ; ROM           ;
-+---------------+--------------+---------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |Remoto|comando[0]~reg0    ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Remoto|vetorA_2[7]        ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Remoto|Selector2          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+-------------------------------------------------------------------------------+
-; Source assignments for altsyncram:WideOr6_rtl_0|altsyncram_odv:auto_generated ;
-+---------------------------------+--------------------+------+-----------------+
-; Assignment                      ; Value              ; From ; To              ;
-+---------------------------------+--------------------+------+-----------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -               ;
-+---------------------------------+--------------------+------+-----------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |Remoto|soma_result_1[4]~reg0 ;
+; 5:1                ; 33 bits   ; 99 LEs        ; 33 LEs               ; 66 LEs                 ; Yes        ; |Remoto|delay[25]             ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |Remoto|ula:G1|rr[0]          ;
+; 14:1               ; 7 bits    ; 63 LEs        ; 28 LEs               ; 35 LEs                 ; Yes        ; |Remoto|vetorA[1]             ;
+; 14:1               ; 6 bits    ; 54 LEs        ; 24 LEs               ; 30 LEs                 ; Yes        ; |Remoto|vetorB[1]             ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Remoto|Selector2             ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 12 LEs               ; 15 LEs                 ; No         ; |Remoto|Selector11            ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; No         ; |Remoto|Selector10            ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Remoto|Selector3             ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; No         ; |Remoto|Selector9             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 
 
 +------------------------------------------------------------------------+
@@ -344,16 +353,24 @@ Encoding Type:  One-Hot
 +-------------------+--------+-------------------------------------------+
 ; Parameter Name    ; Value  ; Type                                      ;
 +-------------------+--------+-------------------------------------------+
-; IDLE              ; 00     ; Unsigned Binary                           ;
-; GUIDANCE          ; 01     ; Unsigned Binary                           ;
-; DATAREAD          ; 10     ; Unsigned Binary                           ;
-; zera_A            ; 001    ; Unsigned Binary                           ;
+; inicia            ; 00     ; Unsigned Binary                           ;
+; inicia_1          ; 01     ; Unsigned Binary                           ;
+; leitura           ; 10     ; Unsigned Binary                           ;
 ; zera_B            ; 010    ; Unsigned Binary                           ;
 ; zera_tudo         ; 011    ; Unsigned Binary                           ;
 ; soma              ; 100    ; Unsigned Binary                           ;
 ; sub               ; 101    ; Unsigned Binary                           ;
 ; muda_sinal        ; 110    ; Unsigned Binary                           ;
-; IDLE_HIGH_DUR     ; 262143 ; Signed Integer                            ;
+; DESLIGADO         ; 0      ; Signed Integer                            ;
+; ESPERA            ; 1      ; Signed Integer                            ;
+; RECEBE_A_DEZ      ; 2      ; Signed Integer                            ;
+; RECEBE_A_UNI      ; 3      ; Signed Integer                            ;
+; MUDA_SINAL_A      ; 4      ; Signed Integer                            ;
+; RECEBE_A_DEZ_B    ; 5      ; Signed Integer                            ;
+; RECEBE_A_UNI_B    ; 6      ; Signed Integer                            ;
+; MUDA_SINAL_B      ; 7      ; Signed Integer                            ;
+; ZERA_TUDO         ; 8      ; Signed Integer                            ;
+; inicia_HIGH_DUR   ; 262143 ; Signed Integer                            ;
 ; GUIDE_LOW_DUR     ; 230000 ; Signed Integer                            ;
 ; GUIDE_HIGH_DUR    ; 210000 ; Signed Integer                            ;
 ; DATA_HIGH_DUR     ; 41500  ; Signed Integer                            ;
@@ -362,83 +379,107 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: altsyncram:WideOr6_rtl_0    ;
-+------------------------------------+------------------------+----------------+
-; Parameter Name                     ; Value                  ; Type           ;
-+------------------------------------+------------------------+----------------+
-; BYTE_SIZE_BLOCK                    ; 8                      ; Untyped        ;
-; AUTO_CARRY_CHAINS                  ; ON                     ; AUTO_CARRY     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                    ; IGNORE_CARRY   ;
-; AUTO_CASCADE_CHAINS                ; ON                     ; AUTO_CASCADE   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                    ; IGNORE_CASCADE ;
-; WIDTH_BYTEENA                      ; 1                      ; Untyped        ;
-; OPERATION_MODE                     ; ROM                    ; Untyped        ;
-; WIDTH_A                            ; 7                      ; Untyped        ;
-; WIDTHAD_A                          ; 8                      ; Untyped        ;
-; NUMWORDS_A                         ; 256                    ; Untyped        ;
-; OUTDATA_REG_A                      ; UNREGISTERED           ; Untyped        ;
-; ADDRESS_ACLR_A                     ; NONE                   ; Untyped        ;
-; OUTDATA_ACLR_A                     ; NONE                   ; Untyped        ;
-; WRCONTROL_ACLR_A                   ; NONE                   ; Untyped        ;
-; INDATA_ACLR_A                      ; NONE                   ; Untyped        ;
-; BYTEENA_ACLR_A                     ; NONE                   ; Untyped        ;
-; WIDTH_B                            ; 1                      ; Untyped        ;
-; WIDTHAD_B                          ; 1                      ; Untyped        ;
-; NUMWORDS_B                         ; 1                      ; Untyped        ;
-; INDATA_REG_B                       ; CLOCK1                 ; Untyped        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                 ; Untyped        ;
-; RDCONTROL_REG_B                    ; CLOCK1                 ; Untyped        ;
-; ADDRESS_REG_B                      ; CLOCK1                 ; Untyped        ;
-; OUTDATA_REG_B                      ; UNREGISTERED           ; Untyped        ;
-; BYTEENA_REG_B                      ; CLOCK1                 ; Untyped        ;
-; INDATA_ACLR_B                      ; NONE                   ; Untyped        ;
-; WRCONTROL_ACLR_B                   ; NONE                   ; Untyped        ;
-; ADDRESS_ACLR_B                     ; NONE                   ; Untyped        ;
-; OUTDATA_ACLR_B                     ; NONE                   ; Untyped        ;
-; RDCONTROL_ACLR_B                   ; NONE                   ; Untyped        ;
-; BYTEENA_ACLR_B                     ; NONE                   ; Untyped        ;
-; WIDTH_BYTEENA_A                    ; 1                      ; Untyped        ;
-; WIDTH_BYTEENA_B                    ; 1                      ; Untyped        ;
-; RAM_BLOCK_TYPE                     ; AUTO                   ; Untyped        ;
-; BYTE_SIZE                          ; 8                      ; Untyped        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE              ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ   ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ   ; Untyped        ;
-; INIT_FILE                          ; remote.Remoto0.rtl.mif ; Untyped        ;
-; INIT_FILE_LAYOUT                   ; PORT_A                 ; Untyped        ;
-; MAXIMUM_DEPTH                      ; 0                      ; Untyped        ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL                 ; Untyped        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                 ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                 ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                 ; Untyped        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN        ; Untyped        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN        ; Untyped        ;
-; ENABLE_ECC                         ; FALSE                  ; Untyped        ;
-; DEVICE_FAMILY                      ; Cyclone IV E           ; Untyped        ;
-; CBXI_PARAMETER                     ; altsyncram_odv         ; Untyped        ;
-+------------------------------------+------------------------+----------------+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_m9m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                     ;
-+-------------------------------------------+--------------------------+
-; Name                                      ; Value                    ;
-+-------------------------------------------+--------------------------+
-; Number of entity instances                ; 1                        ;
-; Entity Instance                           ; altsyncram:WideOr6_rtl_0 ;
-;     -- OPERATION_MODE                     ; ROM                      ;
-;     -- WIDTH_A                            ; 7                        ;
-;     -- NUMWORDS_A                         ; 256                      ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED             ;
-;     -- WIDTH_B                            ; 1                        ;
-;     -- NUMWORDS_B                         ; 1                        ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                   ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED             ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                     ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                ;
-+-------------------------------------------+--------------------------+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_m9m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bcdout:G2|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------+
+; Parameter Name         ; Value          ; Type                             ;
++------------------------+----------------+----------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                          ;
+; CBXI_PARAMETER         ; lpm_divide_m9m ; Untyped                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                   ;
++------------------------+----------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bcdout:G2|lpm_divide:Mod1 ;
++------------------------+----------------+----------------------------------+
+; Parameter Name         ; Value          ; Type                             ;
++------------------------+----------------+----------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                          ;
+; LPM_WIDTHD             ; 7              ; Untyped                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                          ;
+; CBXI_PARAMETER         ; lpm_divide_p9m ; Untyped                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                   ;
++------------------------+----------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula:G1"                                                                                                                                                                          ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                          ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; op   ; Input  ; Warning  ; Input port expression (3 bits) is wider than the input port (1 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; sb   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
+; sa   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -447,80 +488,102 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Jun 12 15:41:12 2018
+    Info: Processing started: Wed Jun 13 02:00:18 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off remote -c remote
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info: Found 1 design units, including 1 entities, in source file bcdin.v
-    Info: Found entity 1: bcdIn
-Info: Found 1 design units, including 1 entities, in source file identificador.v
-    Info: Found entity 1: identificador
+Warning (10229): Verilog HDL Expression warning at bcdout.v(47): truncated literal to match 7 bits
+Warning (10229): Verilog HDL Expression warning at bcdout.v(72): truncated literal to match 7 bits
+Warning (10229): Verilog HDL Expression warning at bcdout.v(83): truncated literal to match 7 bits
+Warning (10229): Verilog HDL Expression warning at bcdout.v(88): truncated literal to match 7 bits
+Warning (10229): Verilog HDL Expression warning at bcdout.v(89): truncated literal to match 7 bits
+Warning (10229): Verilog HDL Expression warning at bcdout.v(90): truncated literal to match 7 bits
+Info: Found 1 design units, including 1 entities, in source file bcdout.v
+    Info: Found entity 1: bcdout
+Info: Found 1 design units, including 1 entities, in source file ula.v
+    Info: Found entity 1: ula
 Info: Found 1 design units, including 1 entities, in source file remoto.v
     Info: Found entity 1: Remoto
 Info: Elaborating entity "Remoto" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(37): object "a1" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(37): object "a11" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(44): object "conta_on" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(44): object "dev" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(45): object "oDATA" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(59): object "a2" assigned a value but never read
-Info (10264): Verilog HDL Case Statement information at Remoto.v(195): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at Remoto.v(247): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at Remoto.v(272): all case item expressions in this case statement are onehot
-Info: Inferred 1 megafunctions from design logic
-    Info: Inferred altsyncram megafunction from the following design logic: "WideOr6~0"
-        Info: Parameter OPERATION_MODE set to ROM
-        Info: Parameter WIDTH_A set to 7
-        Info: Parameter WIDTHAD_A set to 8
-        Info: Parameter NUMWORDS_A set to 256
-        Info: Parameter OUTDATA_REG_A set to UNREGISTERED
-        Info: Parameter RAM_BLOCK_TYPE set to AUTO
-        Info: Parameter INIT_FILE set to remote.Remoto0.rtl.mif
-Info: Elaborated megafunction instantiation "altsyncram:WideOr6_rtl_0"
-Info: Instantiated megafunction "altsyncram:WideOr6_rtl_0" with the following parameter:
-    Info: Parameter "OPERATION_MODE" = "ROM"
-    Info: Parameter "WIDTH_A" = "7"
-    Info: Parameter "WIDTHAD_A" = "8"
-    Info: Parameter "NUMWORDS_A" = "256"
-    Info: Parameter "OUTDATA_REG_A" = "UNREGISTERED"
-    Info: Parameter "RAM_BLOCK_TYPE" = "AUTO"
-    Info: Parameter "INIT_FILE" = "remote.Remoto0.rtl.mif"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_odv.tdf
-    Info: Found entity 1: altsyncram_odv
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(45): object "marca" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(49): object "conta_on" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(49): object "dev" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(52): object "oDATA" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(74): object "nova_mensagem" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at Remoto.v(222): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(230): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(266): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(267): truncated value with size 32 to match size of target (8)
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(261): inferring latch(es) for variable "vetorA_1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(261): inferring latch(es) for variable "vetorA_2", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at Remoto.v(325): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(326): truncated value with size 32 to match size of target (8)
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(320): inferring latch(es) for variable "vetorB_1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(320): inferring latch(es) for variable "vetorB_2", which holds its previous value in one or more paths through the always construct
+Info: Elaborating entity "ula" for hierarchy "ula:G1"
+Info: Elaborating entity "bcdout" for hierarchy "bcdout:G2"
+Warning (10036): Verilog HDL or VHDL warning at bcdout.v(7): object "sinal" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at bcdout.v(20): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at bcdout.v(21): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at bcdout.v(22): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at bcdout.v(23): truncated value with size 32 to match size of target (8)
+Warning (10240): Verilog HDL Always Construct warning at bcdout.v(17): inferring latch(es) for variable "aux", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at bcdout.v(17): inferring latch(es) for variable "uni", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at bcdout.v(17): inferring latch(es) for variable "dezz", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at bcdout.v(17): inferring latch(es) for variable "dez", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at bcdout.v(17): inferring latch(es) for variable "cen", which holds its previous value in one or more paths through the always construct
+Info: Inferred 4 megafunctions from design logic
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcdout:G2|Mod0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcdout:G2|Mod1"
+Info: Elaborated megafunction instantiation "lpm_divide:Mod0"
+Info: Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "8"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_m9m.tdf
+    Info: Found entity 1: lpm_divide_m9m
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info: Found entity 1: sign_div_unsign_bkh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
+    Info: Found entity 1: alt_u_div_a4f
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info: Found entity 1: add_sub_7pc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info: Found entity 1: add_sub_8pc
+Info: Elaborated megafunction instantiation "bcdout:G2|lpm_divide:Mod1"
+Info: Instantiated megafunction "bcdout:G2|lpm_divide:Mod1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "8"
+    Info: Parameter "LPM_WIDTHD" = "7"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_p9m.tdf
+    Info: Found entity 1: lpm_divide_p9m
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ekh.tdf
+    Info: Found entity 1: sign_div_unsign_ekh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_g4f.tdf
+    Info: Found entity 1: alt_u_div_g4f
+Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "su[0]" is stuck at VCC
-    Warning (13410): Pin "su[1]" is stuck at VCC
-    Warning (13410): Pin "su[2]" is stuck at VCC
-    Warning (13410): Pin "su[3]" is stuck at VCC
-    Warning (13410): Pin "su[4]" is stuck at VCC
-    Warning (13410): Pin "su[5]" is stuck at VCC
-    Warning (13410): Pin "su[6]" is stuck at VCC
-    Warning (13410): Pin "suB[0]" is stuck at VCC
-    Warning (13410): Pin "suB[1]" is stuck at VCC
-    Warning (13410): Pin "suB[2]" is stuck at VCC
-    Warning (13410): Pin "suB[3]" is stuck at VCC
-    Warning (13410): Pin "suB[4]" is stuck at VCC
-    Warning (13410): Pin "suB[5]" is stuck at VCC
-    Warning (13410): Pin "suB[6]" is stuck at VCC
-    Warning (13410): Pin "sdB[0]" is stuck at VCC
-    Warning (13410): Pin "sdB[1]" is stuck at VCC
-    Warning (13410): Pin "sdB[2]" is stuck at VCC
-    Warning (13410): Pin "sdB[3]" is stuck at VCC
-    Warning (13410): Pin "sdB[4]" is stuck at VCC
-    Warning (13410): Pin "sdB[5]" is stuck at VCC
-    Warning (13410): Pin "sdB[6]" is stuck at VCC
-    Warning (13410): Pin "led2" is stuck at GND
+    Warning (13410): Pin "sinal_A" is stuck at GND
+    Warning (13410): Pin "sinal_B" is stuck at GND
 Info: Timing-Driven Synthesis is running
+Info: 4 registers lost all their fanouts during netlist optimizations. The first 4 are displayed below.
+    Info: Register "estado~11" lost all its fanouts during netlist optimizations.
+    Info: Register "estado~12" lost all its fanouts during netlist optimizations.
+    Info: Register "estado~13" lost all its fanouts during netlist optimizations.
+    Info: Register "estado~15" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file C:/Users/lfms/Downloads/Controle_remoto-master/remote.map.smsg
-Info: Implemented 211 device resources after synthesis - the final resource count might be different
+Info: Implemented 875 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 38 output pins
-    Info: Implemented 164 logic cells
-    Info: Implemented 7 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Implemented 69 output pins
+    Info: Implemented 804 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 35 warnings
     Info: Peak virtual memory: 232 megabytes
-    Info: Processing ended: Tue Jun 12 15:41:13 2018
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Processing ended: Wed Jun 13 02:00:22 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +------------------------------------------+

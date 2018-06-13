@@ -1,5 +1,5 @@
 Flow report for remote
-Tue Jun 12 15:41:36 2018
+Wed Jun 13 02:00:46 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +------------------------------------+----------------------------------------------+
-; Flow Status                        ; Successful - Tue Jun 12 15:41:36 2018        ;
+; Flow Status                        ; Successful - Wed Jun 13 02:00:46 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; remote                                       ;
 ; Top-level Entity Name              ; Remoto                                       ;
@@ -46,13 +46,13 @@ applicable agreement for further details.
 ; Device                             ; EP4CE115F29C7                                ;
 ; Timing Models                      ; Preliminary                                  ;
 ; Met timing requirements            ; N/A                                          ;
-; Total logic elements               ; 163 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 163 / 114,480 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 98 / 114,480 ( < 1 % )                       ;
-; Total registers                    ; 98                                           ;
-; Total pins                         ; 40 / 529 ( 8 % )                             ;
+; Total logic elements               ; 788 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 787 / 114,480 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 165 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 165                                          ;
+; Total pins                         ; 71 / 529 ( 13 % )                            ;
 ; Total virtual pins                 ; 0                                            ;
-; Total memory bits                  ; 1,792 / 3,981,312 ( < 1 % )                  ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                              ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                ;
 +------------------------------------+----------------------------------------------+
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/12/2018 15:41:12 ;
+; Start date & time ; 06/13/2018 02:00:19 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; remote              ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +------------------------------------+-----------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                                                     ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+-----------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 93179164539113.152882887206216                            ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 93179164539113.152886601804588                            ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP             ; 85                                                        ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP             ; 0                                                         ; --            ; --          ; --             ;
 ; MISC_FILE                          ; C:/Users/lfms/Documents/Controle_remoto/remote.dpf        ; --            ; --          ; --             ;
@@ -92,11 +92,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 232 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:14     ; 2.6                     ; 435 MB              ; 00:00:18                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 438 MB              ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 325 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:22     ; --                      ; --                  ; 00:00:25                           ;
+; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 232 MB              ; 00:00:04                           ;
+; Fitter                    ; 00:00:15     ; 2.2                     ; 436 MB              ; 00:00:19                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 439 MB              ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 327 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:28                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
