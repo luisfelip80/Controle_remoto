@@ -1,16 +1,19 @@
-module bcdin(a,b,c,d,e,f,g,a1,b1,c1,d1,e1,f1,g1,i,j,sinal);
-	output a,b,c,d,e,f,g;
-	output a1,b1,c1,d1,e1,f1,g1;
-	input [3:0]i;
-	input [3:0]j;
-	input sinal;
+module bcdin(a,b,c,d,e,f,g,a1,b1,c1,d1,e1,f1,g1,n,sinal);
+	output a,b,c,d,e,f,g;  //leds do display
+	output a1,b1,c1,d1,e1,f1,g1; //leds do display
+	input [7:0]n;
+	reg [3:0]i; //unidade do numero
+	reg [3:0]j; //dezena do numero
 	reg[6:0] su;
 	reg[6:0] sd;
-	
+	input sinal; //sinal do numero
+
 	always 
 		begin
+		i <= n%10;
+		j <= n/10;
 	
-		case(i)
+		case(i)//unidade
 				4'b0000: 
 					su = 7'b0000001;
 	            4'b0001: 
@@ -35,7 +38,7 @@ module bcdin(a,b,c,d,e,f,g,a1,b1,c1,d1,e1,f1,g1,i,j,sinal);
 					su = 7'b0000001;
         endcase
         
-        case(j)
+        case(j)//dezena
 	        	4'b0000: 
 	        		sd = 7'b0000001;
 		        4'b0001: 
