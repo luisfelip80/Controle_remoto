@@ -1,5 +1,5 @@
 Analysis & Synthesis report for remote
-Wed Jun 13 13:29:08 2018
+Wed Jun 13 15:45:07 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -54,16 +54,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 13 13:29:08 2018        ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 13 15:45:07 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; remote                                       ;
 ; Top-level Entity Name              ; Remoto                                       ;
 ; Family                             ; Cyclone IV E                                 ;
-; Total logic elements               ; 846                                          ;
-;     Total combinational functions  ; 838                                          ;
-;     Dedicated logic registers      ; 169                                          ;
-; Total registers                    ; 169                                          ;
-; Total pins                         ; 72                                           ;
+; Total logic elements               ; 885                                          ;
+;     Total combinational functions  ; 869                                          ;
+;     Dedicated logic registers      ; 177                                          ;
+; Total registers                    ; 177                                          ;
+; Total pins                         ; 70                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -186,9 +186,6 @@ applicable agreement for further details.
 ; db/lpm_divide_p9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/lpm_divide_p9m.tdf      ;
 ; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/sign_div_unsign_ekh.tdf ;
 ; db/alt_u_div_g4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/alt_u_div_g4f.tdf       ;
-; db/lpm_divide_l9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/lpm_divide_l9m.tdf      ;
-; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/sign_div_unsign_akh.tdf ;
-; db/alt_u_div_84f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/alt_u_div_84f.tdf       ;
 ; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/lpm_divide_jhm.tdf      ;
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
 
@@ -198,27 +195,27 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 846       ;
+; Estimated Total logic elements              ; 885       ;
 ;                                             ;           ;
-; Total combinational functions               ; 838       ;
+; Total combinational functions               ; 869       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 360       ;
-;     -- 3 input functions                    ; 196       ;
-;     -- <=2 input functions                  ; 282       ;
+;     -- 4 input functions                    ; 361       ;
+;     -- 3 input functions                    ; 209       ;
+;     -- <=2 input functions                  ; 299       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 628       ;
-;     -- arithmetic mode                      ; 210       ;
+;     -- normal mode                          ; 647       ;
+;     -- arithmetic mode                      ; 222       ;
 ;                                             ;           ;
-; Total registers                             ; 169       ;
-;     -- Dedicated logic registers            ; 169       ;
+; Total registers                             ; 177       ;
+;     -- Dedicated logic registers            ; 177       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 72        ;
+; I/O pins                                    ; 70        ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 169       ;
-; Total fan-out                               ; 3190      ;
-; Average fan-out                             ; 2.77      ;
+; Maximum fan-out                             ; 177       ;
+; Total fan-out                               ; 3277      ;
+; Average fan-out                             ; 2.76      ;
 +---------------------------------------------+-----------+
 
 
@@ -227,29 +224,29 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
-; |Remoto                                   ; 838 (480)         ; 169 (160)    ; 0           ; 0            ; 0       ; 0         ; 72   ; 0            ; |Remoto                                                                                                           ; work         ;
-;    |bcdout:G2|                            ; 180 (85)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2                                                                                                 ;              ;
+; |Remoto                                   ; 869 (474)         ; 177 (159)    ; 0           ; 0            ; 0       ; 0         ; 70   ; 0            ; |Remoto                                                                                                           ; work         ;
+;    |bcdout:G2|                            ; 177 (84)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2                                                                                                 ;              ;
 ;       |lpm_divide:Mod0|                   ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0                                                                                 ;              ;
 ;          |lpm_divide_m9m:auto_generated|  ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0|lpm_divide_m9m:auto_generated                                                   ;              ;
 ;             |sign_div_unsign_bkh:divider| ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                       ;              ;
 ;                |alt_u_div_a4f:divider|    ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ;              ;
-;       |lpm_divide:Mod1|                   ; 36 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1                                                                                 ;              ;
-;          |lpm_divide_p9m:auto_generated|  ; 36 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated                                                   ;              ;
-;             |sign_div_unsign_ekh:divider| ; 36 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider                       ;              ;
-;                |alt_u_div_g4f:divider|    ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider ;              ;
-;    |lpm_divide:Div0|                      ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0                                                                                           ;              ;
-;       |lpm_divide_jhm:auto_generated|     ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                             ;              ;
-;          |sign_div_unsign_bkh:divider|    ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                                 ;              ;
-;             |alt_u_div_a4f:divider|       ; 44 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider           ;              ;
-;    |lpm_divide:Mod0|                      ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0                                                                                           ;              ;
-;       |lpm_divide_m9m:auto_generated|     ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated                                                             ;              ;
-;          |sign_div_unsign_bkh:divider|    ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                                 ;              ;
-;             |alt_u_div_a4f:divider|       ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider           ;              ;
-;    |lpm_divide:Mod1|                      ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1                                                                                           ;              ;
-;       |lpm_divide_l9m:auto_generated|     ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_l9m:auto_generated                                                             ;              ;
-;          |sign_div_unsign_akh:divider|    ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_l9m:auto_generated|sign_div_unsign_akh:divider                                 ;              ;
-;             |alt_u_div_84f:divider|       ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_l9m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider           ;              ;
-;    |ula:G1|                               ; 41 (41)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|ula:G1                                                                                                    ;              ;
+;       |lpm_divide:Mod1|                   ; 34 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1                                                                                 ;              ;
+;          |lpm_divide_p9m:auto_generated|  ; 34 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_ekh:divider| ; 34 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider                       ;              ;
+;                |alt_u_div_g4f:divider|    ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider ;              ;
+;    |lpm_divide:Div0|                      ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0                                                                                           ;              ;
+;       |lpm_divide_jhm:auto_generated|     ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                             ;              ;
+;          |sign_div_unsign_bkh:divider|    ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                                 ;              ;
+;             |alt_u_div_a4f:divider|       ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider           ;              ;
+;    |lpm_divide:Mod0|                      ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0                                                                                           ;              ;
+;       |lpm_divide_m9m:auto_generated|     ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated                                                             ;              ;
+;          |sign_div_unsign_bkh:divider|    ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                                 ;              ;
+;             |alt_u_div_a4f:divider|       ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider           ;              ;
+;    |lpm_divide:Mod1|                      ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1                                                                                           ;              ;
+;       |lpm_divide_m9m:auto_generated|     ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_m9m:auto_generated                                                             ;              ;
+;          |sign_div_unsign_bkh:divider|    ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                                 ;              ;
+;             |alt_u_div_a4f:divider|       ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider           ;              ;
+;    |ula:G1|                               ; 44 (44)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|ula:G1                                                                                                    ;              ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -289,50 +286,44 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; su[0]$latch                                         ; WideOr9             ; yes                    ;
-; su[1]$latch                                         ; WideOr9             ; yes                    ;
-; su[2]$latch                                         ; WideOr9             ; yes                    ;
-; su[3]$latch                                         ; WideOr9             ; yes                    ;
-; su[4]$latch                                         ; WideOr9             ; yes                    ;
-; su[5]$latch                                         ; WideOr9             ; yes                    ;
-; su[6]$latch                                         ; WideOr9             ; yes                    ;
-; sd[0]$latch                                         ; WideOr21            ; yes                    ;
-; sd[1]$latch                                         ; WideOr21            ; yes                    ;
-; sd[2]$latch                                         ; WideOr21            ; yes                    ;
-; sd[3]$latch                                         ; WideOr21            ; yes                    ;
-; sd[4]$latch                                         ; WideOr21            ; yes                    ;
-; sd[5]$latch                                         ; WideOr21            ; yes                    ;
-; sd[6]$latch                                         ; WideOr21            ; yes                    ;
-; suB[0]$latch                                        ; Mux7                ; yes                    ;
-; suB[1]$latch                                        ; Mux7                ; yes                    ;
-; suB[2]$latch                                        ; Mux7                ; yes                    ;
-; suB[3]$latch                                        ; Mux7                ; yes                    ;
-; suB[4]$latch                                        ; Mux7                ; yes                    ;
-; suB[5]$latch                                        ; Mux7                ; yes                    ;
-; suB[6]$latch                                        ; Mux7                ; yes                    ;
-; sdB[0]$latch                                        ; WideOr33            ; yes                    ;
-; sdB[1]$latch                                        ; WideOr33            ; yes                    ;
-; sdB[2]$latch                                        ; WideOr33            ; yes                    ;
-; sdB[3]$latch                                        ; WideOr33            ; yes                    ;
-; sdB[4]$latch                                        ; WideOr33            ; yes                    ;
-; sdB[5]$latch                                        ; WideOr33            ; yes                    ;
-; sdB[6]$latch                                        ; WideOr33            ; yes                    ;
+; su[0]$latch                                         ; WideOr7             ; yes                    ;
+; su[1]$latch                                         ; WideOr7             ; yes                    ;
+; su[2]$latch                                         ; WideOr7             ; yes                    ;
+; su[3]$latch                                         ; WideOr7             ; yes                    ;
+; su[4]$latch                                         ; WideOr7             ; yes                    ;
+; su[5]$latch                                         ; WideOr7             ; yes                    ;
+; su[6]$latch                                         ; WideOr7             ; yes                    ;
+; sd[0]$latch                                         ; WideOr19            ; yes                    ;
+; sd[1]$latch                                         ; WideOr19            ; yes                    ;
+; sd[2]$latch                                         ; WideOr19            ; yes                    ;
+; sd[3]$latch                                         ; WideOr19            ; yes                    ;
+; sd[4]$latch                                         ; WideOr19            ; yes                    ;
+; sd[5]$latch                                         ; WideOr19            ; yes                    ;
+; sd[6]$latch                                         ; WideOr19            ; yes                    ;
+; suB[0]$latch                                        ; Mux0                ; yes                    ;
+; suB[1]$latch                                        ; Mux0                ; yes                    ;
+; suB[2]$latch                                        ; Mux0                ; yes                    ;
+; suB[3]$latch                                        ; Mux0                ; yes                    ;
+; suB[4]$latch                                        ; Mux0                ; yes                    ;
+; suB[5]$latch                                        ; Mux0                ; yes                    ;
+; suB[6]$latch                                        ; Mux0                ; yes                    ;
+; sdB[0]$latch                                        ; WideOr31            ; yes                    ;
+; sdB[1]$latch                                        ; WideOr31            ; yes                    ;
+; sdB[2]$latch                                        ; WideOr31            ; yes                    ;
+; sdB[3]$latch                                        ; WideOr31            ; yes                    ;
+; sdB[4]$latch                                        ; WideOr31            ; yes                    ;
+; sdB[5]$latch                                        ; WideOr31            ; yes                    ;
+; sdB[6]$latch                                        ; WideOr31            ; yes                    ;
 ; vetorA_1[0]                                         ; LessThan10          ; yes                    ;
 ; vetorA_1[1]                                         ; LessThan10          ; yes                    ;
 ; vetorA_1[2]                                         ; LessThan10          ; yes                    ;
 ; vetorA_1[3]                                         ; LessThan10          ; yes                    ;
+; vetorA_2[4]                                         ; LessThan10          ; yes                    ;
 ; vetorA_2[0]                                         ; LessThan10          ; yes                    ;
 ; vetorA_2[1]                                         ; LessThan10          ; yes                    ;
 ; vetorA_2[2]                                         ; LessThan10          ; yes                    ;
 ; vetorA_2[3]                                         ; LessThan10          ; yes                    ;
-; vetorA_aux[0]                                       ; LessThan10          ; yes                    ;
-; vetorA_aux[1]                                       ; LessThan10          ; yes                    ;
-; vetorA_aux[2]                                       ; LessThan10          ; yes                    ;
-; vetorA_aux[3]                                       ; LessThan10          ; yes                    ;
-; vetorA_aux[4]                                       ; LessThan10          ; yes                    ;
-; vetorA_aux[5]                                       ; LessThan10          ; yes                    ;
-; vetorA_aux[6]                                       ; LessThan10          ; yes                    ;
-; Number of user-specified and inferred latches = 43  ;                     ;                        ;
+; Number of user-specified and inferred latches = 37  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -355,12 +346,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 169   ;
+; Total registers                              ; 177   ;
 ; Number of registers using Synchronous Clear  ; 76    ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 78    ;
+; Number of registers using Clock Enable       ; 79    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -371,21 +362,21 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
 ; vetorA[0]                               ; 9       ;
-; vetorA[1]                               ; 8       ;
-; vetorA[2]                               ; 8       ;
-; vetorA[3]                               ; 8       ;
-; vetorA[4]                               ; 8       ;
-; vetorA[5]                               ; 7       ;
-; vetorA[6]                               ; 7       ;
+; vetorA[1]                               ; 12      ;
+; vetorA[2]                               ; 13      ;
+; vetorA[3]                               ; 15      ;
+; vetorA[4]                               ; 15      ;
+; vetorA[5]                               ; 12      ;
+; vetorA[6]                               ; 12      ;
 ; vetorA[7]                               ; 5       ;
-; vetorB[6]                               ; 22      ;
-; vetorB[5]                               ; 24      ;
-; vetorB[4]                               ; 26      ;
-; vetorB[3]                               ; 27      ;
-; vetorB[2]                               ; 25      ;
-; vetorB[1]                               ; 27      ;
-; vetorB[0]                               ; 23      ;
-; vetorB[7]                               ; 4       ;
+; vetorB[0]                               ; 17      ;
+; vetorB[7]                               ; 12      ;
+; vetorB[6]                               ; 18      ;
+; vetorB[5]                               ; 20      ;
+; vetorB[4]                               ; 23      ;
+; vetorB[3]                               ; 20      ;
+; vetorB[2]                               ; 21      ;
+; vetorB[1]                               ; 20      ;
 ; op[0]                                   ; 4       ;
 ; Total number of inverted registers = 17 ;         ;
 +-----------------------------------------+---------+
@@ -397,14 +388,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 ; 6:1                ; 33 bits   ; 132 LEs       ; 33 LEs               ; 99 LEs                 ; Yes        ; |Remoto|delay[8]              ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |Remoto|ula:G1|rr[7]          ;
-; 11:1               ; 9 bits    ; 63 LEs        ; 9 LEs                ; 54 LEs                 ; Yes        ; |Remoto|soma_result_1[8]~reg0 ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 18 LEs               ; 24 LEs                 ; Yes        ; |Remoto|vetorA[1]             ;
-; 12:1               ; 6 bits    ; 48 LEs        ; 18 LEs               ; 30 LEs                 ; Yes        ; |Remoto|vetorB[1]             ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |Remoto|ula:G1|rr[0]          ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |Remoto|soma_result_1[4]~reg0 ;
+; 11:1               ; 7 bits    ; 49 LEs        ; 21 LEs               ; 28 LEs                 ; Yes        ; |Remoto|vetorA[3]             ;
+; 12:1               ; 7 bits    ; 56 LEs        ; 21 LEs               ; 35 LEs                 ; Yes        ; |Remoto|vetorB[1]             ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Remoto|Selector0             ;
-; 15:1               ; 5 bits    ; 50 LEs        ; 30 LEs               ; 20 LEs                 ; No         ; |Remoto|Selector23            ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Remoto|Selector25            ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 6 LEs                ; 16 LEs                 ; No         ; |Remoto|Selector21            ;
+; 15:1               ; 5 bits    ; 50 LEs        ; 30 LEs               ; 20 LEs                 ; No         ; |Remoto|Selector20            ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 6 LEs                ; 16 LEs                 ; No         ; |Remoto|Selector24            ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; No         ; |Remoto|Selector25            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 
 
@@ -490,14 +481,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+------------------------+
 ; Parameter Name         ; Value          ; Type                   ;
 +------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHN             ; 8              ; Untyped                ;
 ; LPM_WIDTHD             ; 4              ; Untyped                ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_PIPELINE           ; 0              ; Untyped                ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_l9m ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_m9m ; Untyped                ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
@@ -571,7 +562,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Jun 13 13:29:03 2018
+    Info: Processing started: Wed Jun 13 15:45:03 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off remote -c remote
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Warning (10229): Verilog HDL Expression warning at bcdout.v(47): truncated literal to match 7 bits
@@ -584,87 +575,77 @@ Info: Found 1 design units, including 1 entities, in source file bcdout.v
     Info: Found entity 1: bcdout
 Info: Found 1 design units, including 1 entities, in source file ula.v
     Info: Found entity 1: ula
+Warning (10229): Verilog HDL Expression warning at Remoto.v(155): truncated literal to match 8 bits
+Warning (10229): Verilog HDL Expression warning at Remoto.v(169): truncated literal to match 8 bits
+Warning (10229): Verilog HDL Expression warning at Remoto.v(208): truncated literal to match 8 bits
+Warning (10229): Verilog HDL Expression warning at Remoto.v(217): truncated literal to match 8 bits
 Info: Found 1 design units, including 1 entities, in source file remoto.v
     Info: Found entity 1: Remoto
 Info: Elaborating entity "Remoto" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(46): object "marca" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(50): object "conta_on" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(50): object "dev" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(53): object "oDATA" assigned a value but never read
-Warning (10855): Verilog HDL warning at Remoto.v(77): initial value for variable soma_result_1 should be constant
-Warning (10230): Verilog HDL assignment warning at Remoto.v(231): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at Remoto.v(243): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at Remoto.v(284): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at Remoto.v(285): truncated value with size 32 to match size of target (8)
-Warning (10270): Verilog HDL Case Statement warning at Remoto.v(286): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at Remoto.v(309): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(277): inferring latch(es) for variable "su", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(277): inferring latch(es) for variable "sd", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(277): inferring latch(es) for variable "vetorA_aux", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(277): inferring latch(es) for variable "vetorA_1", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(277): inferring latch(es) for variable "vetorA_2", which holds its previous value in one or more paths through the always construct
-Warning (10230): Verilog HDL assignment warning at Remoto.v(341): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at Remoto.v(342): truncated value with size 32 to match size of target (8)
-Warning (10270): Verilog HDL Case Statement warning at Remoto.v(343): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at Remoto.v(366): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(334): inferring latch(es) for variable "suB", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(334): inferring latch(es) for variable "sdB", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(334): inferring latch(es) for variable "vetorB_aux", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(334): inferring latch(es) for variable "vetorB_1", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(334): inferring latch(es) for variable "vetorB_2", which holds its previous value in one or more paths through the always construct
-Warning (10034): Output port "sing" at Remoto.v(66) has no driver
-Info (10041): Inferred latch for "sdB[0]" at Remoto.v(339)
-Info (10041): Inferred latch for "sdB[1]" at Remoto.v(339)
-Info (10041): Inferred latch for "sdB[2]" at Remoto.v(339)
-Info (10041): Inferred latch for "sdB[3]" at Remoto.v(339)
-Info (10041): Inferred latch for "sdB[4]" at Remoto.v(339)
-Info (10041): Inferred latch for "sdB[5]" at Remoto.v(339)
-Info (10041): Inferred latch for "sdB[6]" at Remoto.v(339)
-Info (10041): Inferred latch for "suB[0]" at Remoto.v(339)
-Info (10041): Inferred latch for "suB[1]" at Remoto.v(339)
-Info (10041): Inferred latch for "suB[2]" at Remoto.v(339)
-Info (10041): Inferred latch for "suB[3]" at Remoto.v(339)
-Info (10041): Inferred latch for "suB[4]" at Remoto.v(339)
-Info (10041): Inferred latch for "suB[5]" at Remoto.v(339)
-Info (10041): Inferred latch for "suB[6]" at Remoto.v(339)
-Info (10041): Inferred latch for "vetorA_2[0]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_2[1]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_2[2]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_2[3]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_2[4]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_2[5]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_2[6]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_2[7]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_1[0]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_1[1]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_1[2]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_1[3]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_1[4]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_1[5]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_1[6]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_1[7]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_aux[0]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_aux[1]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_aux[2]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_aux[3]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_aux[4]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_aux[5]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_aux[6]" at Remoto.v(277)
-Info (10041): Inferred latch for "vetorA_aux[7]" at Remoto.v(277)
-Info (10041): Inferred latch for "sd[0]" at Remoto.v(282)
-Info (10041): Inferred latch for "sd[1]" at Remoto.v(282)
-Info (10041): Inferred latch for "sd[2]" at Remoto.v(282)
-Info (10041): Inferred latch for "sd[3]" at Remoto.v(282)
-Info (10041): Inferred latch for "sd[4]" at Remoto.v(282)
-Info (10041): Inferred latch for "sd[5]" at Remoto.v(282)
-Info (10041): Inferred latch for "sd[6]" at Remoto.v(282)
-Info (10041): Inferred latch for "su[0]" at Remoto.v(282)
-Info (10041): Inferred latch for "su[1]" at Remoto.v(282)
-Info (10041): Inferred latch for "su[2]" at Remoto.v(282)
-Info (10041): Inferred latch for "su[3]" at Remoto.v(282)
-Info (10041): Inferred latch for "su[4]" at Remoto.v(282)
-Info (10041): Inferred latch for "su[5]" at Remoto.v(282)
-Info (10041): Inferred latch for "su[6]" at Remoto.v(282)
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(45): object "marca" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(49): object "dados_c" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at Remoto.v(251): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(263): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(298): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(299): truncated value with size 32 to match size of target (8)
+Warning (10270): Verilog HDL Case Statement warning at Remoto.v(300): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at Remoto.v(323): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(293): inferring latch(es) for variable "su", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(293): inferring latch(es) for variable "sd", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(293): inferring latch(es) for variable "vetorA_1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(293): inferring latch(es) for variable "vetorA_2", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at Remoto.v(353): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(354): truncated value with size 32 to match size of target (8)
+Warning (10270): Verilog HDL Case Statement warning at Remoto.v(355): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at Remoto.v(378): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(348): inferring latch(es) for variable "suB", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(348): inferring latch(es) for variable "sdB", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(348): inferring latch(es) for variable "vetorB_1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(348): inferring latch(es) for variable "vetorB_2", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "sdB[0]" at Remoto.v(353)
+Info (10041): Inferred latch for "sdB[1]" at Remoto.v(353)
+Info (10041): Inferred latch for "sdB[2]" at Remoto.v(353)
+Info (10041): Inferred latch for "sdB[3]" at Remoto.v(353)
+Info (10041): Inferred latch for "sdB[4]" at Remoto.v(353)
+Info (10041): Inferred latch for "sdB[5]" at Remoto.v(353)
+Info (10041): Inferred latch for "sdB[6]" at Remoto.v(353)
+Info (10041): Inferred latch for "suB[0]" at Remoto.v(353)
+Info (10041): Inferred latch for "suB[1]" at Remoto.v(353)
+Info (10041): Inferred latch for "suB[2]" at Remoto.v(353)
+Info (10041): Inferred latch for "suB[3]" at Remoto.v(353)
+Info (10041): Inferred latch for "suB[4]" at Remoto.v(353)
+Info (10041): Inferred latch for "suB[5]" at Remoto.v(353)
+Info (10041): Inferred latch for "suB[6]" at Remoto.v(353)
+Info (10041): Inferred latch for "vetorA_2[0]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_2[1]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_2[2]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_2[3]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_2[4]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_2[5]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_2[6]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_2[7]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_1[0]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_1[1]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_1[2]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_1[3]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_1[4]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_1[5]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_1[6]" at Remoto.v(293)
+Info (10041): Inferred latch for "vetorA_1[7]" at Remoto.v(293)
+Info (10041): Inferred latch for "sd[0]" at Remoto.v(298)
+Info (10041): Inferred latch for "sd[1]" at Remoto.v(298)
+Info (10041): Inferred latch for "sd[2]" at Remoto.v(298)
+Info (10041): Inferred latch for "sd[3]" at Remoto.v(298)
+Info (10041): Inferred latch for "sd[4]" at Remoto.v(298)
+Info (10041): Inferred latch for "sd[5]" at Remoto.v(298)
+Info (10041): Inferred latch for "sd[6]" at Remoto.v(298)
+Info (10041): Inferred latch for "su[0]" at Remoto.v(298)
+Info (10041): Inferred latch for "su[1]" at Remoto.v(298)
+Info (10041): Inferred latch for "su[2]" at Remoto.v(298)
+Info (10041): Inferred latch for "su[3]" at Remoto.v(298)
+Info (10041): Inferred latch for "su[4]" at Remoto.v(298)
+Info (10041): Inferred latch for "su[5]" at Remoto.v(298)
+Info (10041): Inferred latch for "su[6]" at Remoto.v(298)
 Info: Elaborating entity "ula" for hierarchy "ula:G1"
 Info: Elaborating entity "bcdout" for hierarchy "bcdout:G2"
 Warning (10036): Verilog HDL or VHDL warning at bcdout.v(7): object "sinal" assigned a value but never read
@@ -711,24 +692,6 @@ Info: Found 1 design units, including 1 entities, in source file db/sign_div_uns
     Info: Found entity 1: sign_div_unsign_ekh
 Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_g4f.tdf
     Info: Found entity 1: alt_u_div_g4f
-Info: Elaborated megafunction instantiation "lpm_divide:Mod1"
-Info: Instantiated megafunction "lpm_divide:Mod1" with the following parameter:
-    Info: Parameter "LPM_WIDTHN" = "7"
-    Info: Parameter "LPM_WIDTHD" = "4"
-    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_l9m.tdf
-    Info: Found entity 1: lpm_divide_l9m
-Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
-    Info: Found entity 1: sign_div_unsign_akh
-Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_84f.tdf
-    Info: Found entity 1: alt_u_div_84f
-Info: Elaborated megafunction instantiation "lpm_divide:Mod0"
-Info: Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
-    Info: Parameter "LPM_WIDTHN" = "8"
-    Info: Parameter "LPM_WIDTHD" = "4"
-    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info: Elaborated megafunction instantiation "lpm_divide:Div0"
 Info: Instantiated megafunction "lpm_divide:Div0" with the following parameter:
     Info: Parameter "LPM_WIDTHN" = "8"
@@ -753,19 +716,19 @@ Warning: Latch su[5]$latch has unsafe behavior
 Warning: Latch su[6]$latch has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal vetorA_1[1]
 Warning: Latch sd[0]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[4]
 Warning: Latch sd[1]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[4]
 Warning: Latch sd[2]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[4]
 Warning: Latch sd[3]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[4]
 Warning: Latch sd[4]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[4]
 Warning: Latch sd[5]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[4]
 Warning: Latch sd[6]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[4]
 Warning: Latch suB[0]$latch has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal vetorB[1]
     Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[1]
@@ -808,22 +771,14 @@ Warning: Latch sdB[5]$latch has unsafe behavior
 Warning: Latch sdB[6]$latch has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal vetorB[0]
     Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[0]
-Warning: Latch vetorA_aux[0] has unsafe behavior
+Warning: Latch vetorA_1[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal vetorA[0]
-Warning: Latch vetorA_aux[1] has unsafe behavior
+Warning: Latch vetorA_1[1] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal vetorA[1]
-Warning: Latch vetorA_aux[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[5]
-Warning: Latch vetorA_aux[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[4]
-Warning: Latch vetorA_aux[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[6]
-Warning: Latch vetorA_aux[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[3]
-Warning: Latch vetorA_aux[2] has unsafe behavior
+Warning: Latch vetorA_1[2] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal vetorA[2]
-Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "sing" is stuck at GND
+Warning: Latch vetorA_1[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[3]
 Info: Timing-Driven Synthesis is running
 Info: 4 registers lost all their fanouts during netlist optimizations. The first 4 are displayed below.
     Info: Register "estado_m~11" lost all its fanouts during netlist optimizations.
@@ -831,15 +786,15 @@ Info: 4 registers lost all their fanouts during netlist optimizations. The first
     Info: Register "estado_m~13" lost all its fanouts during netlist optimizations.
     Info: Register "estado_m~15" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file C:/Users/lfms/Downloads/Controle_remoto-master/remote.map.smsg
-Info: Implemented 919 device resources after synthesis - the final resource count might be different
+Info: Implemented 956 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 70 output pins
-    Info: Implemented 847 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 129 warnings
+    Info: Implemented 68 output pins
+    Info: Implemented 886 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 119 warnings
     Info: Peak virtual memory: 233 megabytes
-    Info: Processing ended: Wed Jun 13 13:29:08 2018
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Processing ended: Wed Jun 13 15:45:07 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +------------------------------------------+

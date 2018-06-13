@@ -16,12 +16,12 @@ module bcdout(saida,saida1,saida2,in,enable);
 	always begin
 		if (enable) begin
 			sinal = in[8];
-			aux = in[7:0];
+			aux[7:0] = in[7:0];
 			uni = aux%10;
 			dezz = aux%100;
 			dez = dezz/10;
 			cen = aux/100;
-			
+				
 			case(uni)
 				8'b00000000: 
 					saida = 7'b0000001;

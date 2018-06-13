@@ -3,315 +3,315 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'vetorA[0]'
-Slack : -13.969
-TNS   : -77.757
+Slack : -13.875
+TNS   : -85.679
 
 Type  : Slow 1200mV 85C Model Setup 'vetorB[1]'
-Slack : -10.302
-TNS   : -66.840
+Slack : -13.059
+TNS   : -86.965
 
 Type  : Slow 1200mV 85C Model Setup 'vetorB[2]'
-Slack : -10.071
-TNS   : -96.706
+Slack : -11.993
+TNS   : -111.577
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -8.543
-TNS   : -751.692
-
-Type  : Slow 1200mV 85C Model Setup 'vetorA_1[1]'
-Slack : -2.694
-TNS   : -16.306
+Slack : -7.201
+TNS   : -733.012
 
 Type  : Slow 1200mV 85C Model Setup 'vetorA_2[1]'
-Slack : -1.517
-TNS   : -9.987
+Slack : -3.155
+TNS   : -19.639
+
+Type  : Slow 1200mV 85C Model Setup 'vetorA_1[1]'
+Slack : -2.921
+TNS   : -16.741
 
 Type  : Slow 1200mV 85C Model Hold 'vetorB[2]'
-Slack : -8.788
-TNS   : -65.857
+Slack : -8.812
+TNS   : -64.775
 
 Type  : Slow 1200mV 85C Model Hold 'vetorB[1]'
-Slack : -6.478
-TNS   : -38.093
+Slack : -6.486
+TNS   : -37.813
 
 Type  : Slow 1200mV 85C Model Hold 'vetorA_2[1]'
-Slack : -1.616
-TNS   : -10.938
-
-Type  : Slow 1200mV 85C Model Hold 'vetorA_1[1]'
-Slack : -1.158
-TNS   : -7.506
+Slack : -1.992
+TNS   : -11.729
 
 Type  : Slow 1200mV 85C Model Hold 'vetorA[0]'
-Slack : -1.142
-TNS   : -2.224
+Slack : -1.224
+TNS   : -1.224
+
+Type  : Slow 1200mV 85C Model Hold 'vetorA_1[1]'
+Slack : -1.113
+TNS   : -6.424
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : -0.981
-TNS   : -12.059
+Slack : -0.715
+TNS   : -5.095
 
 Type  : Slow 1200mV 85C Model Recovery 'vetorB[2]'
-Slack : -1.815
-TNS   : -16.395
-
-Type  : Slow 1200mV 85C Model Recovery 'vetorA_1[1]'
-Slack : -1.661
-TNS   : -9.596
+Slack : -3.073
+TNS   : -18.641
 
 Type  : Slow 1200mV 85C Model Recovery 'vetorB[1]'
-Slack : -1.555
-TNS   : -7.501
+Slack : -2.417
+TNS   : -11.881
+
+Type  : Slow 1200mV 85C Model Recovery 'vetorA_1[1]'
+Slack : -2.042
+TNS   : -10.614
 
 Type  : Slow 1200mV 85C Model Recovery 'vetorA_2[1]'
-Slack : -1.135
-TNS   : -7.229
+Slack : -1.188
+TNS   : -6.035
 
 Type  : Slow 1200mV 85C Model Removal 'vetorB[2]'
-Slack : -6.742
-TNS   : -54.395
+Slack : -6.772
+TNS   : -54.891
 
 Type  : Slow 1200mV 85C Model Removal 'vetorB[1]'
-Slack : -4.392
-TNS   : -28.484
+Slack : -4.388
+TNS   : -29.043
 
 Type  : Slow 1200mV 85C Model Removal 'vetorA_2[1]'
-Slack : -3.949
-TNS   : -27.489
+Slack : -3.672
+TNS   : -24.923
 
 Type  : Slow 1200mV 85C Model Removal 'vetorA_1[1]'
-Slack : -3.437
-TNS   : -23.931
+Slack : -3.124
+TNS   : -20.926
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vetorB[2]'
-Slack : -3.914
-TNS   : -337.041
+Slack : -3.511
+TNS   : -300.423
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -220.165
+TNS   : -230.445
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vetorB[1]'
-Slack : -1.041
-TNS   : -56.006
+Slack : -2.088
+TNS   : -91.094
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vetorA[0]'
-Slack : 0.398
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vetorA_2[1]'
-Slack : 0.438
+Slack : 0.382
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vetorA_1[1]'
-Slack : 0.460
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vetorA_2[1]'
+Slack : 0.459
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'vetorA[0]'
-Slack : -12.582
-TNS   : -70.049
+Slack : -12.500
+TNS   : -77.121
 
 Type  : Slow 1200mV 0C Model Setup 'vetorB[1]'
-Slack : -9.447
-TNS   : -61.348
+Slack : -11.927
+TNS   : -79.486
 
 Type  : Slow 1200mV 0C Model Setup 'vetorB[2]'
-Slack : -9.206
-TNS   : -90.069
+Slack : -10.918
+TNS   : -102.828
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -7.813
-TNS   : -675.855
-
-Type  : Slow 1200mV 0C Model Setup 'vetorA_1[1]'
-Slack : -2.543
-TNS   : -15.333
+Slack : -6.494
+TNS   : -655.261
 
 Type  : Slow 1200mV 0C Model Setup 'vetorA_2[1]'
-Slack : -1.291
-TNS   : -8.381
+Slack : -2.822
+TNS   : -17.610
+
+Type  : Slow 1200mV 0C Model Setup 'vetorA_1[1]'
+Slack : -2.745
+TNS   : -15.564
 
 Type  : Slow 1200mV 0C Model Hold 'vetorB[2]'
-Slack : -7.939
-TNS   : -59.194
+Slack : -7.894
+TNS   : -57.628
 
 Type  : Slow 1200mV 0C Model Hold 'vetorB[1]'
-Slack : -5.860
-TNS   : -34.540
+Slack : -5.833
+TNS   : -33.957
 
 Type  : Slow 1200mV 0C Model Hold 'vetorA_2[1]'
-Slack : -1.437
-TNS   : -9.734
+Slack : -1.747
+TNS   : -10.576
 
 Type  : Slow 1200mV 0C Model Hold 'vetorA[0]'
-Slack : -1.053
-TNS   : -1.666
-
-Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : -0.924
-TNS   : -11.274
+Slack : -1.106
+TNS   : -1.106
 
 Type  : Slow 1200mV 0C Model Hold 'vetorA_1[1]'
-Slack : -0.880
-TNS   : -5.673
+Slack : -0.868
+TNS   : -4.837
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : -0.700
+TNS   : -4.986
 
 Type  : Slow 1200mV 0C Model Recovery 'vetorB[2]'
-Slack : -1.760
-TNS   : -16.104
-
-Type  : Slow 1200mV 0C Model Recovery 'vetorA_1[1]'
-Slack : -1.587
-TNS   : -9.114
+Slack : -2.967
+TNS   : -18.367
 
 Type  : Slow 1200mV 0C Model Recovery 'vetorB[1]'
-Slack : -1.539
-TNS   : -7.577
+Slack : -2.347
+TNS   : -11.631
+
+Type  : Slow 1200mV 0C Model Recovery 'vetorA_1[1]'
+Slack : -1.919
+TNS   : -9.955
 
 Type  : Slow 1200mV 0C Model Recovery 'vetorA_2[1]'
-Slack : -0.947
-TNS   : -5.902
+Slack : -1.043
+TNS   : -5.150
 
 Type  : Slow 1200mV 0C Model Removal 'vetorB[2]'
-Slack : -6.084
-TNS   : -48.472
+Slack : -6.019
+TNS   : -48.153
 
 Type  : Slow 1200mV 0C Model Removal 'vetorB[1]'
-Slack : -3.920
-TNS   : -25.423
+Slack : -3.871
+TNS   : -25.697
 
 Type  : Slow 1200mV 0C Model Removal 'vetorA_2[1]'
-Slack : -3.672
-TNS   : -25.559
+Slack : -3.389
+TNS   : -22.986
 
 Type  : Slow 1200mV 0C Model Removal 'vetorA_1[1]'
-Slack : -3.060
-TNS   : -21.316
+Slack : -2.772
+TNS   : -18.560
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vetorB[2]'
-Slack : -3.474
-TNS   : -296.159
+Slack : -3.073
+TNS   : -260.230
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -220.165
+TNS   : -230.445
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vetorB[1]'
-Slack : -0.909
-TNS   : -48.063
+Slack : -1.818
+TNS   : -76.940
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vetorA_2[1]'
-Slack : 0.363
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vetorA[0]'
+Slack : 0.350
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vetorA_1[1]'
-Slack : 0.401
+Slack : 0.366
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vetorA[0]'
-Slack : 0.443
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vetorA_2[1]'
+Slack : 0.384
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'vetorA[0]'
-Slack : -6.343
-TNS   : -33.262
+Slack : -6.722
+TNS   : -41.150
 
 Type  : Fast 1200mV 0C Model Setup 'vetorB[1]'
-Slack : -4.817
-TNS   : -30.487
+Slack : -6.006
+TNS   : -40.180
 
 Type  : Fast 1200mV 0C Model Setup 'vetorB[2]'
-Slack : -4.734
-TNS   : -43.697
+Slack : -5.502
+TNS   : -50.344
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -3.800
-TNS   : -289.813
-
-Type  : Fast 1200mV 0C Model Setup 'vetorA_1[1]'
-Slack : -0.920
-TNS   : -5.065
+Slack : -3.072
+TNS   : -276.227
 
 Type  : Fast 1200mV 0C Model Setup 'vetorA_2[1]'
-Slack : -0.496
-TNS   : -3.130
+Slack : -1.346
+TNS   : -8.092
+
+Type  : Fast 1200mV 0C Model Setup 'vetorA_1[1]'
+Slack : -1.063
+TNS   : -5.455
 
 Type  : Fast 1200mV 0C Model Hold 'vetorB[2]'
-Slack : -4.523
-TNS   : -35.621
+Slack : -4.546
+TNS   : -35.056
 
 Type  : Fast 1200mV 0C Model Hold 'vetorB[1]'
-Slack : -3.383
-TNS   : -20.265
+Slack : -3.376
+TNS   : -20.078
 
 Type  : Fast 1200mV 0C Model Hold 'vetorA_2[1]'
-Slack : -0.854
-TNS   : -5.799
+Slack : -1.209
+TNS   : -6.543
 
 Type  : Fast 1200mV 0C Model Hold 'vetorA_1[1]'
-Slack : -0.831
-TNS   : -5.462
+Slack : -0.746
+TNS   : -4.590
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : -0.737
-TNS   : -10.173
+Slack : -0.593
+TNS   : -5.594
 
 Type  : Fast 1200mV 0C Model Hold 'vetorA[0]'
-Slack : -0.385
-TNS   : -0.385
+Slack : -0.422
+TNS   : -0.422
 
 Type  : Fast 1200mV 0C Model Recovery 'vetorB[2]'
-Slack : -0.525
-TNS   : -3.542
+Slack : -1.210
+TNS   : -5.271
 
 Type  : Fast 1200mV 0C Model Recovery 'vetorB[1]'
-Slack : -0.461
-TNS   : -1.366
+Slack : -0.892
+TNS   : -3.677
 
 Type  : Fast 1200mV 0C Model Recovery 'vetorA_1[1]'
-Slack : -0.199
-TNS   : -0.353
+Slack : -0.440
+TNS   : -1.162
 
 Type  : Fast 1200mV 0C Model Recovery 'vetorA_2[1]'
-Slack : -0.122
-TNS   : -0.466
+Slack : -0.094
+TNS   : -0.141
 
 Type  : Fast 1200mV 0C Model Removal 'vetorB[2]'
-Slack : -3.366
-TNS   : -27.896
+Slack : -3.403
+TNS   : -28.498
 
 Type  : Fast 1200mV 0C Model Removal 'vetorB[1]'
-Slack : -2.349
-TNS   : -15.346
+Slack : -2.314
+TNS   : -15.395
 
 Type  : Fast 1200mV 0C Model Removal 'vetorA_2[1]'
-Slack : -2.010
-TNS   : -13.997
+Slack : -1.916
+TNS   : -12.901
 
 Type  : Fast 1200mV 0C Model Removal 'vetorA_1[1]'
-Slack : -1.948
-TNS   : -13.588
+Slack : -1.802
+TNS   : -11.876
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -181.235
+TNS   : -189.819
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vetorB[2]'
-Slack : -1.749
-TNS   : -121.846
+Slack : -1.522
+TNS   : -106.763
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vetorB[1]'
-Slack : -0.361
-TNS   : -10.359
+Slack : -0.846
+TNS   : -25.495
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vetorA_2[1]'
-Slack : 0.249
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vetorA[0]'
-Slack : 0.294
+Slack : 0.255
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vetorA_1[1]'
-Slack : 0.343
+Slack : 0.364
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vetorA[0]'
+Slack : 0.385
 TNS   : 0.000
 
 ------------------------------------------------------------

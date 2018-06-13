@@ -1,4 +1,4 @@
-module Remoto(clk,entrada,comando,su,sd,suB,sdB,saida_1,saida1_1,saida2_1,soma_result_1,sinal_A,sinal_B,sing, led);
+module Remoto(clk,entrada,comando,su,sd,suB,sdB,saida_1,saida1_1,saida2_1,soma_result_1,sinal_A,sinal_B);
 
 parameter inicia            = 2'b00;   
 parameter inicia_1          = 2'b01;    
@@ -26,7 +26,6 @@ parameter tempo_bit  =  20000;
 
 input         clk;      
 input         entrada;    
-output reg led;
 output reg [7:0] comando;
 output reg[6:0] su;
 output reg[6:0] sd;
@@ -44,18 +43,14 @@ reg [7:0] vetorB_aux;
 reg [7:0] vetorB_1;
 reg [7:0] vetorB_2;
 reg marca;
-reg [7:0] pega_comando;
-reg [7:0] comando_2;
-reg [31:0]delay_on;
-reg conta_on,on,dev,zera_A;
+reg on;
 output reg sinal_A;
 output reg sinal_B;
-reg    [31:0] oDATA;              
+reg    [31:0] dados_c;              
 reg    [17:0] contado_inicial;            
 reg           contado_inicial_flag;      
 reg [32:0]delay;
 reg [2:0]op;
-reg [32:0]delay1;
 wire [6:0] saida;
 wire [6:0] saida1;
 wire [6:0] saida2;
@@ -63,7 +58,6 @@ wire [6:0] saida2;
 output [6:0] saida_1;
 output [6:0] saida1_1;
 output [6:0] saida2_1;
-output reg sing;
 
 reg    [17:0] contador_inicial;           
 reg           contador_inicial_flag;    
@@ -71,28 +65,27 @@ reg    [17:0] contagem;
 reg           contagem_flag;     
 reg     [5:0] bitcount;              
 reg     [1:0] estado;             
-reg    [31:0] data;        
+reg    [31:0] dados_control;        
 reg nova_mensagem,nova_uni,nova_dezen,menor_que_10,menor_que_10_dez;        
-reg    [31:0] data_buf;       
+reg    [31:0] dados_buffer;       
 initial begin
 	op = 1;
 	on = 0;
 	nova_mensagem = 0;
 	marca = 0;
-	dev<=0;
-	led = 0;
 	estado = DESLIGADO;
-	conta_on = 0;
 	vetorA<=8'b11111111;
 	vetorB<=8'b11111111;
-	soma_result_1[8]=1;
+	sinal_A<=0;
+	sinal_B<=0;
 end
 
 assign saida_1 = saida;
 assign saida1_1 = saida1;
 assign saida2_1 = saida2;
-ula G1(.clock(clk),.a(vetorA),.b(vetorB),.r(soma_result),.op(op), .enable(on));
+ula G1(.clock(clk),.a(vetorA),.b(vetorB),.r(soma_result),.op(op), .enable(on), .sinA(sinal_A),.sinB(sinal_B));
 bcdout G2(.saida(saida),.saida1(saida1),.saida2(saida2),.in(soma_result_1),.enable(on));
+
 always @(posedge clk )
 if ((estado == inicia) && !entrada)
 			 contado_inicial <= contado_inicial + 1'b1;
@@ -135,20 +128,20 @@ always @(posedge clk)
 	  if (estado == leitura)
 		begin
 			 if (contagem >= tempo_zero) 
-			    data[bitcount-1'b1] <= 1'b1;  
+			    dados_control[bitcount-1'b1] <= 1'b1;  
 		end
 		else
-			 data <= 0;
+			 dados_control <= 0;
 always @(posedge clk)
 	  if (nova_mensagem)
-	     oDATA <= data_buf;
+	     dados_c <= dados_buffer;
 
 always @(posedge clk)
 	  if (bitcount == 32) begin
-			 if (data[31:24] == ~data[23:16])
+			 if (dados_control[31:24] == ~dados_control[23:16])
 			 begin		
-				comando[7:0] <= data[23:16]; 
-				data_buf <= data;
+				comando[7:0] <= dados_control[23:16]; 
+				dados_buffer <= dados_control;
 			 	nova_mensagem <= 1'b1;
 			 end
 			 else
@@ -159,6 +152,12 @@ always @(posedge clk)
 		end
 
 always @(posedge clk) begin
+	if(soma_result_1==0)begin
+		soma_result_1=8'b100000000;
+	end
+	else if(!on && soma_result_1[8]==0) begin
+		soma_result_1[8]=1'b1;
+	end
 	case(estado_m)
 		DESLIGADO: begin
 				if(comando == 8'b00010010 && nova_mensagem)begin
@@ -167,19 +166,24 @@ always @(posedge clk) begin
 					vetorA<=0;
 					vetorB<=0;
 					op<=0;
-					soma_result_1 = soma_result;
+					if(soma_result==0)begin
+						soma_result_1=8'b100000000;
+					end
 				end
 			end
 		ESPERA:begin
 				if(comando == 8'b00010010 && nova_mensagem)begin//desligar
 					vetorA<=8'b11111111;
 					vetorB<=8'b11111111;
+					soma_result_1 <=0;
+					soma_result_1[8] <=1;
 					estado_m <= DESLIGADO;
 					on<=0;
 				end
 				else if(comando == 8'b00001111)begin // zera a
 					estado_m <=  RECEBE_A_DEZ;
 					vetorA<=0;
+					sinal_A<=0;
 					soma_result_1 <=0;
 					soma_result_1[8] <=1;
 				end
@@ -187,26 +191,43 @@ always @(posedge clk) begin
 					estado_m <=  ZERA_TUDO;
 					vetorA<=0;
 					vetorB<=0;
+					sinal_A<=0;
+					sinal_B<=0;
+					soma_result_1 <=0;
+					soma_result_1[8] <=1;
 				end
 				else if(comando == 8'b00010011)begin//zera b
 					estado_m <= RECEBE_A_DEZ_B;
 					vetorB<=0;
+					sinal_B<=0;
 					soma_result_1 <=0;
 					soma_result_1[8] <=1;
 				end
 				else if(comando == 8'b00011010)begin//soma
 					op<=0;
-					soma_result_1 = soma_result;
+					if(soma_result==0)begin
+						soma_result_1=8'b100000000;
+					end
+					else begin
+						soma_result_1 = soma_result;
+					end
 				end
 				else if(comando == 8'b00011110)begin//sub
 					op<=1;
+					if(soma_result==0)begin
+						soma_result_1=8'b100000000;
+					end
+					else begin
 					soma_result_1 = soma_result;
+						
+					end
 				end
 			end
 		ZERA_TUDO:begin
 				estado_m <= RECEBE_A_DEZ;
 				soma_result_1 <=0;
 				soma_result_1[8] <=1;
+
 				//op<=0;
 		end
 		RECEBE_A_DEZ_B:begin
@@ -229,12 +250,11 @@ always @(posedge clk) begin
 			delay = delay + 1'b1;
 				if((delay > 5000000 && (comando >= 0 && comando < 10)) && nova_mensagem)begin
 					vetorA<=vetorA * 10 + comando;
-					vetorA_aux <= vetorA;
 					estado_m <= MUDA_SINAL_A;
 					delay<=0;
 				end
 				else if((delay > 5000000 && comando > 9) && nova_mensagem)begin
-					estado_m <= MUDA_SINAL_B;
+					estado_m <= MUDA_SINAL_A;
 					delay<=0;
 				end
 			end
@@ -242,8 +262,6 @@ always @(posedge clk) begin
 			delay = delay + 1'b1;
 				if((delay > 5000000 && (comando >= 0 && comando < 10)) && nova_mensagem)begin
 					vetorB<=vetorB * 10 + comando;
-					vetorB_aux <= vetorB;
-					vetorB[7] <= sinal_B;
 					estado_m <= MUDA_SINAL_B;
 					delay<=0;
 				end
@@ -255,8 +273,6 @@ always @(posedge clk) begin
 		MUDA_SINAL_A:begin
 			if(comando == 8'b00001100)begin
 				sinal_A=~sinal_A;
-				led <=1;
-				vetorA[7] <= sinal_A;
 				estado_m <=ESPERA;
 			end
 			else if(comando > 9 && comando != 8'b00001100)begin
@@ -266,7 +282,6 @@ always @(posedge clk) begin
 		MUDA_SINAL_B:begin
 			if(comando == 8'b00001100 )begin
 				sinal_B=~sinal_B;
-				vetorB[7] <= sinal_B;
 				estado_m <=ESPERA;
 			end
 			else if(comando > 9 && comando != 8'b00001100)begin
@@ -281,8 +296,8 @@ always @(*) begin
 			sd = 7'b1111111;
 		end
 		else begin
-			vetorA_1 <= vetorA_aux%10;
-			vetorA_2 <= vetorA_aux/10;
+			vetorA_1 <= vetorA%10;
+			vetorA_2 <= vetorA/10;
 			case(vetorA_1)
 				0: 
 					su = 7'b0000001;
@@ -336,10 +351,8 @@ always @(*) begin
 			sdB = 7'b1111111;
 		end
 		else begin
-			vetorB_aux = vetorB;
-			vetorB_aux[7] = 0;
-			vetorB_1 = vetorB_aux%10;
-			vetorB_2 = vetorB_aux/10;
+			vetorB_1 = vetorB%10;
+			vetorB_2 = vetorB/10;
 			case(vetorB_1)
 					0: 
 						suB = 7'b0000001;
