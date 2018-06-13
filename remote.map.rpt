@@ -1,5 +1,5 @@
 Analysis & Synthesis report for remote
-Wed Jun 13 02:00:22 2018
+Wed Jun 13 13:29:08 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -13,20 +13,22 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Remoto|estado
-  9. State Machine - |Remoto|state
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: Top-level Entity: |Remoto
- 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
- 17. Parameter Settings for Inferred Entity Instance: bcdout:G2|lpm_divide:Mod0
- 18. Parameter Settings for Inferred Entity Instance: bcdout:G2|lpm_divide:Mod1
- 19. Port Connectivity Checks: "ula:G1"
- 20. Analysis & Synthesis Messages
- 21. Analysis & Synthesis Suppressed Messages
+  8. State Machine - |Remoto|estado_m
+  9. State Machine - |Remoto|estado
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |Remoto
+ 16. Parameter Settings for Inferred Entity Instance: bcdout:G2|lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: bcdout:G2|lpm_divide:Mod1
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 21. Port Connectivity Checks: "ula:G1"
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -52,16 +54,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 13 02:00:22 2018        ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 13 13:29:08 2018        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; remote                                       ;
 ; Top-level Entity Name              ; Remoto                                       ;
 ; Family                             ; Cyclone IV E                                 ;
-; Total logic elements               ; 804                                          ;
-;     Total combinational functions  ; 787                                          ;
-;     Dedicated logic registers      ; 165                                          ;
-; Total registers                    ; 165                                          ;
-; Total pins                         ; 71                                           ;
+; Total logic elements               ; 846                                          ;
+;     Total combinational functions  ; 838                                          ;
+;     Dedicated logic registers      ; 169                                          ;
+; Total registers                    ; 169                                          ;
+; Total pins                         ; 72                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -184,6 +186,10 @@ applicable agreement for further details.
 ; db/lpm_divide_p9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/lpm_divide_p9m.tdf      ;
 ; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/sign_div_unsign_ekh.tdf ;
 ; db/alt_u_div_g4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/alt_u_div_g4f.tdf       ;
+; db/lpm_divide_l9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/lpm_divide_l9m.tdf      ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/sign_div_unsign_akh.tdf ;
+; db/alt_u_div_84f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/alt_u_div_84f.tdf       ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/lfms/Downloads/Controle_remoto-master/db/lpm_divide_jhm.tdf      ;
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
 
 
@@ -192,27 +198,27 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 804       ;
+; Estimated Total logic elements              ; 846       ;
 ;                                             ;           ;
-; Total combinational functions               ; 787       ;
+; Total combinational functions               ; 838       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 323       ;
-;     -- 3 input functions                    ; 181       ;
-;     -- <=2 input functions                  ; 283       ;
+;     -- 4 input functions                    ; 360       ;
+;     -- 3 input functions                    ; 196       ;
+;     -- <=2 input functions                  ; 282       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 586       ;
-;     -- arithmetic mode                      ; 201       ;
+;     -- normal mode                          ; 628       ;
+;     -- arithmetic mode                      ; 210       ;
 ;                                             ;           ;
-; Total registers                             ; 165       ;
-;     -- Dedicated logic registers            ; 165       ;
+; Total registers                             ; 169       ;
+;     -- Dedicated logic registers            ; 169       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 71        ;
+; I/O pins                                    ; 72        ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 165       ;
-; Total fan-out                               ; 2995      ;
-; Average fan-out                             ; 2.74      ;
+; Maximum fan-out                             ; 169       ;
+; Total fan-out                               ; 3190      ;
+; Average fan-out                             ; 2.77      ;
 +---------------------------------------------+-----------+
 
 
@@ -221,72 +227,127 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
-; |Remoto                                   ; 787 (448)         ; 165 (156)    ; 0           ; 0            ; 0       ; 0         ; 71   ; 0            ; |Remoto                                                                                                           ; work         ;
-;    |bcdout:G2|                            ; 180 (87)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2                                                                                                 ;              ;
+; |Remoto                                   ; 838 (480)         ; 169 (160)    ; 0           ; 0            ; 0       ; 0         ; 72   ; 0            ; |Remoto                                                                                                           ; work         ;
+;    |bcdout:G2|                            ; 180 (85)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2                                                                                                 ;              ;
 ;       |lpm_divide:Mod0|                   ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0                                                                                 ;              ;
 ;          |lpm_divide_m9m:auto_generated|  ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0|lpm_divide_m9m:auto_generated                                                   ;              ;
 ;             |sign_div_unsign_bkh:divider| ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                       ;              ;
 ;                |alt_u_div_a4f:divider|    ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ;              ;
-;       |lpm_divide:Mod1|                   ; 34 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1                                                                                 ;              ;
-;          |lpm_divide_p9m:auto_generated|  ; 34 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated                                                   ;              ;
-;             |sign_div_unsign_ekh:divider| ; 34 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider                       ;              ;
-;                |alt_u_div_g4f:divider|    ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider ;              ;
-;    |lpm_divide:Mod0|                      ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0                                                                                           ;              ;
-;       |lpm_divide_m9m:auto_generated|     ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated                                                             ;              ;
-;          |sign_div_unsign_bkh:divider|    ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                                 ;              ;
-;             |alt_u_div_a4f:divider|       ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider           ;              ;
-;    |lpm_divide:Mod1|                      ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1                                                                                           ;              ;
-;       |lpm_divide_m9m:auto_generated|     ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_m9m:auto_generated                                                             ;              ;
-;          |sign_div_unsign_bkh:divider|    ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                                 ;              ;
-;             |alt_u_div_a4f:divider|       ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider           ;              ;
+;       |lpm_divide:Mod1|                   ; 36 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1                                                                                 ;              ;
+;          |lpm_divide_p9m:auto_generated|  ; 36 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_ekh:divider| ; 36 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider                       ;              ;
+;                |alt_u_div_g4f:divider|    ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|bcdout:G2|lpm_divide:Mod1|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider ;              ;
+;    |lpm_divide:Div0|                      ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0                                                                                           ;              ;
+;       |lpm_divide_jhm:auto_generated|     ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                             ;              ;
+;          |sign_div_unsign_bkh:divider|    ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                                 ;              ;
+;             |alt_u_div_a4f:divider|       ; 44 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider           ;              ;
+;    |lpm_divide:Mod0|                      ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0                                                                                           ;              ;
+;       |lpm_divide_m9m:auto_generated|     ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated                                                             ;              ;
+;          |sign_div_unsign_bkh:divider|    ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider                                 ;              ;
+;             |alt_u_div_a4f:divider|       ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod0|lpm_divide_m9m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider           ;              ;
+;    |lpm_divide:Mod1|                      ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1                                                                                           ;              ;
+;       |lpm_divide_l9m:auto_generated|     ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_l9m:auto_generated                                                             ;              ;
+;          |sign_div_unsign_akh:divider|    ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_l9m:auto_generated|sign_div_unsign_akh:divider                                 ;              ;
+;             |alt_u_div_84f:divider|       ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|lpm_divide:Mod1|lpm_divide_l9m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider           ;              ;
 ;    |ula:G1|                               ; 41 (41)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Remoto|ula:G1                                                                                                    ;              ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Remoto|estado                                                                                                                                                                                      ;
-+-----------------------+---------------------+-----------------------+-----------------------+---------------------+---------------------+---------------------+---------------+------------------+------------------+
-; Name                  ; estado.MUDA_SINAL_B ; estado.RECEBE_A_UNI_B ; estado.RECEBE_A_DEZ_B ; estado.MUDA_SINAL_A ; estado.RECEBE_A_UNI ; estado.RECEBE_A_DEZ ; estado.ESPERA ; estado.DESLIGADO ; estado.ZERA_TUDO ;
-+-----------------------+---------------------+-----------------------+-----------------------+---------------------+---------------------+---------------------+---------------+------------------+------------------+
-; estado.DESLIGADO      ; 0                   ; 0                     ; 0                     ; 0                   ; 0                   ; 0                   ; 0             ; 0                ; 0                ;
-; estado.ESPERA         ; 0                   ; 0                     ; 0                     ; 0                   ; 0                   ; 0                   ; 1             ; 1                ; 0                ;
-; estado.RECEBE_A_DEZ   ; 0                   ; 0                     ; 0                     ; 0                   ; 0                   ; 1                   ; 0             ; 1                ; 0                ;
-; estado.RECEBE_A_UNI   ; 0                   ; 0                     ; 0                     ; 0                   ; 1                   ; 0                   ; 0             ; 1                ; 0                ;
-; estado.MUDA_SINAL_A   ; 0                   ; 0                     ; 0                     ; 1                   ; 0                   ; 0                   ; 0             ; 1                ; 0                ;
-; estado.RECEBE_A_DEZ_B ; 0                   ; 0                     ; 1                     ; 0                   ; 0                   ; 0                   ; 0             ; 1                ; 0                ;
-; estado.RECEBE_A_UNI_B ; 0                   ; 1                     ; 0                     ; 0                   ; 0                   ; 0                   ; 0             ; 1                ; 0                ;
-; estado.MUDA_SINAL_B   ; 1                   ; 0                     ; 0                     ; 0                   ; 0                   ; 0                   ; 0             ; 1                ; 0                ;
-; estado.ZERA_TUDO      ; 0                   ; 0                     ; 0                     ; 0                   ; 0                   ; 0                   ; 0             ; 1                ; 1                ;
-+-----------------------+---------------------+-----------------------+-----------------------+---------------------+---------------------+---------------------+---------------+------------------+------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Remoto|estado_m                                                                                                                                                                                                        ;
++-------------------------+-----------------------+-------------------------+-------------------------+-----------------------+-----------------------+-----------------------+-----------------+--------------------+--------------------+
+; Name                    ; estado_m.MUDA_SINAL_B ; estado_m.RECEBE_A_UNI_B ; estado_m.RECEBE_A_DEZ_B ; estado_m.MUDA_SINAL_A ; estado_m.RECEBE_A_UNI ; estado_m.RECEBE_A_DEZ ; estado_m.ESPERA ; estado_m.DESLIGADO ; estado_m.ZERA_TUDO ;
++-------------------------+-----------------------+-------------------------+-------------------------+-----------------------+-----------------------+-----------------------+-----------------+--------------------+--------------------+
+; estado_m.DESLIGADO      ; 0                     ; 0                       ; 0                       ; 0                     ; 0                     ; 0                     ; 0               ; 0                  ; 0                  ;
+; estado_m.ESPERA         ; 0                     ; 0                       ; 0                       ; 0                     ; 0                     ; 0                     ; 1               ; 1                  ; 0                  ;
+; estado_m.RECEBE_A_DEZ   ; 0                     ; 0                       ; 0                       ; 0                     ; 0                     ; 1                     ; 0               ; 1                  ; 0                  ;
+; estado_m.RECEBE_A_UNI   ; 0                     ; 0                       ; 0                       ; 0                     ; 1                     ; 0                     ; 0               ; 1                  ; 0                  ;
+; estado_m.MUDA_SINAL_A   ; 0                     ; 0                       ; 0                       ; 1                     ; 0                     ; 0                     ; 0               ; 1                  ; 0                  ;
+; estado_m.RECEBE_A_DEZ_B ; 0                     ; 0                       ; 1                       ; 0                     ; 0                     ; 0                     ; 0               ; 1                  ; 0                  ;
+; estado_m.RECEBE_A_UNI_B ; 0                     ; 1                       ; 0                       ; 0                     ; 0                     ; 0                     ; 0               ; 1                  ; 0                  ;
+; estado_m.MUDA_SINAL_B   ; 1                     ; 0                       ; 0                       ; 0                     ; 0                     ; 0                     ; 0               ; 1                  ; 0                  ;
+; estado_m.ZERA_TUDO      ; 0                     ; 0                       ; 0                       ; 0                     ; 0                     ; 0                     ; 0               ; 1                  ; 1                  ;
++-------------------------+-----------------------+-------------------------+-------------------------+-----------------------+-----------------------+-----------------------+-----------------+--------------------+--------------------+
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------+
-; State Machine - |Remoto|state                                  ;
-+----------------+--------------+---------------+----------------+
-; Name           ; state.inicia ; state.leitura ; state.inicia_1 ;
-+----------------+--------------+---------------+----------------+
-; state.inicia   ; 0            ; 0             ; 0              ;
-; state.inicia_1 ; 1            ; 0             ; 1              ;
-; state.leitura  ; 1            ; 1             ; 0              ;
-+----------------+--------------+---------------+----------------+
++------------------------------------------------------------------------+
+; State Machine - |Remoto|estado                                         ;
++------------------+------------------+----------------+-----------------+
+; Name             ; estado.DESLIGADO ; estado.leitura ; estado.inicia_1 ;
++------------------+------------------+----------------+-----------------+
+; estado.DESLIGADO ; 0                ; 0              ; 0               ;
+; estado.inicia_1  ; 1                ; 0              ; 1               ;
+; estado.leitura   ; 1                ; 1              ; 0               ;
++------------------+------------------+----------------+-----------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; sinal_B~reg0                          ; Stuck at GND due to stuck port data_in ;
-; sinal_A~reg0                          ; Stuck at GND due to stuck port data_in ;
-; estado~11                             ; Lost fanout                            ;
-; estado~12                             ; Lost fanout                            ;
-; estado~13                             ; Lost fanout                            ;
-; estado~15                             ; Lost fanout                            ;
-; Total Number of Removed Registers = 6 ;                                        ;
-+---------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; su[0]$latch                                         ; WideOr9             ; yes                    ;
+; su[1]$latch                                         ; WideOr9             ; yes                    ;
+; su[2]$latch                                         ; WideOr9             ; yes                    ;
+; su[3]$latch                                         ; WideOr9             ; yes                    ;
+; su[4]$latch                                         ; WideOr9             ; yes                    ;
+; su[5]$latch                                         ; WideOr9             ; yes                    ;
+; su[6]$latch                                         ; WideOr9             ; yes                    ;
+; sd[0]$latch                                         ; WideOr21            ; yes                    ;
+; sd[1]$latch                                         ; WideOr21            ; yes                    ;
+; sd[2]$latch                                         ; WideOr21            ; yes                    ;
+; sd[3]$latch                                         ; WideOr21            ; yes                    ;
+; sd[4]$latch                                         ; WideOr21            ; yes                    ;
+; sd[5]$latch                                         ; WideOr21            ; yes                    ;
+; sd[6]$latch                                         ; WideOr21            ; yes                    ;
+; suB[0]$latch                                        ; Mux7                ; yes                    ;
+; suB[1]$latch                                        ; Mux7                ; yes                    ;
+; suB[2]$latch                                        ; Mux7                ; yes                    ;
+; suB[3]$latch                                        ; Mux7                ; yes                    ;
+; suB[4]$latch                                        ; Mux7                ; yes                    ;
+; suB[5]$latch                                        ; Mux7                ; yes                    ;
+; suB[6]$latch                                        ; Mux7                ; yes                    ;
+; sdB[0]$latch                                        ; WideOr33            ; yes                    ;
+; sdB[1]$latch                                        ; WideOr33            ; yes                    ;
+; sdB[2]$latch                                        ; WideOr33            ; yes                    ;
+; sdB[3]$latch                                        ; WideOr33            ; yes                    ;
+; sdB[4]$latch                                        ; WideOr33            ; yes                    ;
+; sdB[5]$latch                                        ; WideOr33            ; yes                    ;
+; sdB[6]$latch                                        ; WideOr33            ; yes                    ;
+; vetorA_1[0]                                         ; LessThan10          ; yes                    ;
+; vetorA_1[1]                                         ; LessThan10          ; yes                    ;
+; vetorA_1[2]                                         ; LessThan10          ; yes                    ;
+; vetorA_1[3]                                         ; LessThan10          ; yes                    ;
+; vetorA_2[0]                                         ; LessThan10          ; yes                    ;
+; vetorA_2[1]                                         ; LessThan10          ; yes                    ;
+; vetorA_2[2]                                         ; LessThan10          ; yes                    ;
+; vetorA_2[3]                                         ; LessThan10          ; yes                    ;
+; vetorA_aux[0]                                       ; LessThan10          ; yes                    ;
+; vetorA_aux[1]                                       ; LessThan10          ; yes                    ;
+; vetorA_aux[2]                                       ; LessThan10          ; yes                    ;
+; vetorA_aux[3]                                       ; LessThan10          ; yes                    ;
+; vetorA_aux[4]                                       ; LessThan10          ; yes                    ;
+; vetorA_aux[5]                                       ; LessThan10          ; yes                    ;
+; vetorA_aux[6]                                       ; LessThan10          ; yes                    ;
+; Number of user-specified and inferred latches = 43  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; estado_m~11                           ; Lost fanout        ;
+; estado_m~12                           ; Lost fanout        ;
+; estado_m~13                           ; Lost fanout        ;
+; estado_m~15                           ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -294,12 +355,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 165   ;
+; Total registers                              ; 169   ;
 ; Number of registers using Synchronous Clear  ; 76    ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 79    ;
+; Number of registers using Clock Enable       ; 78    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -309,23 +370,23 @@ Encoding Type:  One-Hot
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; vetorA[5]                               ; 18      ;
-; vetorA[4]                               ; 25      ;
-; vetorA[3]                               ; 20      ;
-; vetorA[2]                               ; 19      ;
-; vetorA[0]                               ; 17      ;
-; vetorA[1]                               ; 17      ;
-; vetorA[7]                               ; 13      ;
-; vetorA[6]                               ; 22      ;
-; vetorB[5]                               ; 18      ;
-; vetorB[4]                               ; 24      ;
-; vetorB[3]                               ; 20      ;
-; vetorB[2]                               ; 19      ;
-; vetorB[0]                               ; 17      ;
-; vetorB[1]                               ; 17      ;
-; vetorB[7]                               ; 14      ;
-; vetorB[6]                               ; 21      ;
-; op[0]                                   ; 3       ;
+; vetorA[0]                               ; 9       ;
+; vetorA[1]                               ; 8       ;
+; vetorA[2]                               ; 8       ;
+; vetorA[3]                               ; 8       ;
+; vetorA[4]                               ; 8       ;
+; vetorA[5]                               ; 7       ;
+; vetorA[6]                               ; 7       ;
+; vetorA[7]                               ; 5       ;
+; vetorB[6]                               ; 22      ;
+; vetorB[5]                               ; 24      ;
+; vetorB[4]                               ; 26      ;
+; vetorB[3]                               ; 27      ;
+; vetorB[2]                               ; 25      ;
+; vetorB[1]                               ; 27      ;
+; vetorB[0]                               ; 23      ;
+; vetorB[7]                               ; 4       ;
+; op[0]                                   ; 4       ;
 ; Total number of inverted registers = 17 ;         ;
 +-----------------------------------------+---------+
 
@@ -335,93 +396,46 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |Remoto|soma_result_1[4]~reg0 ;
-; 5:1                ; 33 bits   ; 99 LEs        ; 33 LEs               ; 66 LEs                 ; Yes        ; |Remoto|delay[25]             ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |Remoto|ula:G1|rr[0]          ;
-; 14:1               ; 7 bits    ; 63 LEs        ; 28 LEs               ; 35 LEs                 ; Yes        ; |Remoto|vetorA[1]             ;
-; 14:1               ; 6 bits    ; 54 LEs        ; 24 LEs               ; 30 LEs                 ; Yes        ; |Remoto|vetorB[1]             ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Remoto|Selector2             ;
-; 14:1               ; 3 bits    ; 27 LEs        ; 12 LEs               ; 15 LEs                 ; No         ; |Remoto|Selector11            ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; No         ; |Remoto|Selector10            ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Remoto|Selector3             ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; No         ; |Remoto|Selector9             ;
+; 6:1                ; 33 bits   ; 132 LEs       ; 33 LEs               ; 99 LEs                 ; Yes        ; |Remoto|delay[8]              ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |Remoto|ula:G1|rr[7]          ;
+; 11:1               ; 9 bits    ; 63 LEs        ; 9 LEs                ; 54 LEs                 ; Yes        ; |Remoto|soma_result_1[8]~reg0 ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 18 LEs               ; 24 LEs                 ; Yes        ; |Remoto|vetorA[1]             ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 18 LEs               ; 30 LEs                 ; Yes        ; |Remoto|vetorB[1]             ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Remoto|Selector0             ;
+; 15:1               ; 5 bits    ; 50 LEs        ; 30 LEs               ; 20 LEs                 ; No         ; |Remoto|Selector23            ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Remoto|Selector25            ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 6 LEs                ; 16 LEs                 ; No         ; |Remoto|Selector21            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 
 
 +------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |Remoto ;
-+-------------------+--------+-------------------------------------------+
-; Parameter Name    ; Value  ; Type                                      ;
-+-------------------+--------+-------------------------------------------+
-; inicia            ; 00     ; Unsigned Binary                           ;
-; inicia_1          ; 01     ; Unsigned Binary                           ;
-; leitura           ; 10     ; Unsigned Binary                           ;
-; zera_B            ; 010    ; Unsigned Binary                           ;
-; zera_tudo         ; 011    ; Unsigned Binary                           ;
-; soma              ; 100    ; Unsigned Binary                           ;
-; sub               ; 101    ; Unsigned Binary                           ;
-; muda_sinal        ; 110    ; Unsigned Binary                           ;
-; DESLIGADO         ; 0      ; Signed Integer                            ;
-; ESPERA            ; 1      ; Signed Integer                            ;
-; RECEBE_A_DEZ      ; 2      ; Signed Integer                            ;
-; RECEBE_A_UNI      ; 3      ; Signed Integer                            ;
-; MUDA_SINAL_A      ; 4      ; Signed Integer                            ;
-; RECEBE_A_DEZ_B    ; 5      ; Signed Integer                            ;
-; RECEBE_A_UNI_B    ; 6      ; Signed Integer                            ;
-; MUDA_SINAL_B      ; 7      ; Signed Integer                            ;
-; ZERA_TUDO         ; 8      ; Signed Integer                            ;
-; inicia_HIGH_DUR   ; 262143 ; Signed Integer                            ;
-; GUIDE_LOW_DUR     ; 230000 ; Signed Integer                            ;
-; GUIDE_HIGH_DUR    ; 210000 ; Signed Integer                            ;
-; DATA_HIGH_DUR     ; 41500  ; Signed Integer                            ;
-; BIT_AVAILABLE_DUR ; 20000  ; Signed Integer                            ;
-+-------------------+--------+-------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 8              ; Untyped                ;
-; LPM_WIDTHD             ; 4              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_m9m ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 8              ; Untyped                ;
-; LPM_WIDTHD             ; 4              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_m9m ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++----------------+--------+----------------------------------------------+
+; Parameter Name ; Value  ; Type                                         ;
++----------------+--------+----------------------------------------------+
+; inicia         ; 00     ; Unsigned Binary                              ;
+; inicia_1       ; 01     ; Unsigned Binary                              ;
+; leitura        ; 10     ; Unsigned Binary                              ;
+; zera_B         ; 010    ; Unsigned Binary                              ;
+; zera_tudo      ; 011    ; Unsigned Binary                              ;
+; soma           ; 100    ; Unsigned Binary                              ;
+; sub            ; 101    ; Unsigned Binary                              ;
+; muda_sinal     ; 110    ; Unsigned Binary                              ;
+; DESLIGADO      ; 0      ; Signed Integer                               ;
+; ESPERA         ; 1      ; Signed Integer                               ;
+; limite_um      ; 262143 ; Signed Integer                               ;
+; lid_zero       ; 230000 ; Signed Integer                               ;
+; RECEBE_A_DEZ   ; 2      ; Signed Integer                               ;
+; RECEBE_A_UNI   ; 3      ; Signed Integer                               ;
+; MUDA_SINAL_A   ; 4      ; Signed Integer                               ;
+; RECEBE_A_DEZ_B ; 5      ; Signed Integer                               ;
+; RECEBE_A_UNI_B ; 6      ; Signed Integer                               ;
+; MUDA_SINAL_B   ; 7      ; Signed Integer                               ;
+; ZERA_TUDO      ; 8      ; Signed Integer                               ;
+; lid_um         ; 210000 ; Signed Integer                               ;
+; tempo_zero     ; 41500  ; Signed Integer                               ;
+; tempo_bit      ; 20000  ; Signed Integer                               ;
++----------------+--------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -471,6 +485,75 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_l9m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_m9m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "ula:G1"                                                                                                                                                                          ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -488,7 +571,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Jun 13 02:00:18 2018
+    Info: Processing started: Wed Jun 13 13:29:03 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off remote -c remote
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Warning (10229): Verilog HDL Expression warning at bcdout.v(47): truncated literal to match 7 bits
@@ -504,21 +587,84 @@ Info: Found 1 design units, including 1 entities, in source file ula.v
 Info: Found 1 design units, including 1 entities, in source file remoto.v
     Info: Found entity 1: Remoto
 Info: Elaborating entity "Remoto" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(45): object "marca" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(49): object "conta_on" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(49): object "dev" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(52): object "oDATA" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Remoto.v(74): object "nova_mensagem" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at Remoto.v(222): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at Remoto.v(230): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at Remoto.v(266): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at Remoto.v(267): truncated value with size 32 to match size of target (8)
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(261): inferring latch(es) for variable "vetorA_1", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(261): inferring latch(es) for variable "vetorA_2", which holds its previous value in one or more paths through the always construct
-Warning (10230): Verilog HDL assignment warning at Remoto.v(325): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at Remoto.v(326): truncated value with size 32 to match size of target (8)
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(320): inferring latch(es) for variable "vetorB_1", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Remoto.v(320): inferring latch(es) for variable "vetorB_2", which holds its previous value in one or more paths through the always construct
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(46): object "marca" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(50): object "conta_on" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(50): object "dev" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Remoto.v(53): object "oDATA" assigned a value but never read
+Warning (10855): Verilog HDL warning at Remoto.v(77): initial value for variable soma_result_1 should be constant
+Warning (10230): Verilog HDL assignment warning at Remoto.v(231): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(243): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(284): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(285): truncated value with size 32 to match size of target (8)
+Warning (10270): Verilog HDL Case Statement warning at Remoto.v(286): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at Remoto.v(309): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(277): inferring latch(es) for variable "su", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(277): inferring latch(es) for variable "sd", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(277): inferring latch(es) for variable "vetorA_aux", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(277): inferring latch(es) for variable "vetorA_1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(277): inferring latch(es) for variable "vetorA_2", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at Remoto.v(341): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Remoto.v(342): truncated value with size 32 to match size of target (8)
+Warning (10270): Verilog HDL Case Statement warning at Remoto.v(343): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at Remoto.v(366): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(334): inferring latch(es) for variable "suB", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(334): inferring latch(es) for variable "sdB", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(334): inferring latch(es) for variable "vetorB_aux", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(334): inferring latch(es) for variable "vetorB_1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Remoto.v(334): inferring latch(es) for variable "vetorB_2", which holds its previous value in one or more paths through the always construct
+Warning (10034): Output port "sing" at Remoto.v(66) has no driver
+Info (10041): Inferred latch for "sdB[0]" at Remoto.v(339)
+Info (10041): Inferred latch for "sdB[1]" at Remoto.v(339)
+Info (10041): Inferred latch for "sdB[2]" at Remoto.v(339)
+Info (10041): Inferred latch for "sdB[3]" at Remoto.v(339)
+Info (10041): Inferred latch for "sdB[4]" at Remoto.v(339)
+Info (10041): Inferred latch for "sdB[5]" at Remoto.v(339)
+Info (10041): Inferred latch for "sdB[6]" at Remoto.v(339)
+Info (10041): Inferred latch for "suB[0]" at Remoto.v(339)
+Info (10041): Inferred latch for "suB[1]" at Remoto.v(339)
+Info (10041): Inferred latch for "suB[2]" at Remoto.v(339)
+Info (10041): Inferred latch for "suB[3]" at Remoto.v(339)
+Info (10041): Inferred latch for "suB[4]" at Remoto.v(339)
+Info (10041): Inferred latch for "suB[5]" at Remoto.v(339)
+Info (10041): Inferred latch for "suB[6]" at Remoto.v(339)
+Info (10041): Inferred latch for "vetorA_2[0]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_2[1]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_2[2]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_2[3]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_2[4]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_2[5]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_2[6]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_2[7]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_1[0]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_1[1]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_1[2]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_1[3]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_1[4]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_1[5]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_1[6]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_1[7]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_aux[0]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_aux[1]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_aux[2]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_aux[3]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_aux[4]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_aux[5]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_aux[6]" at Remoto.v(277)
+Info (10041): Inferred latch for "vetorA_aux[7]" at Remoto.v(277)
+Info (10041): Inferred latch for "sd[0]" at Remoto.v(282)
+Info (10041): Inferred latch for "sd[1]" at Remoto.v(282)
+Info (10041): Inferred latch for "sd[2]" at Remoto.v(282)
+Info (10041): Inferred latch for "sd[3]" at Remoto.v(282)
+Info (10041): Inferred latch for "sd[4]" at Remoto.v(282)
+Info (10041): Inferred latch for "sd[5]" at Remoto.v(282)
+Info (10041): Inferred latch for "sd[6]" at Remoto.v(282)
+Info (10041): Inferred latch for "su[0]" at Remoto.v(282)
+Info (10041): Inferred latch for "su[1]" at Remoto.v(282)
+Info (10041): Inferred latch for "su[2]" at Remoto.v(282)
+Info (10041): Inferred latch for "su[3]" at Remoto.v(282)
+Info (10041): Inferred latch for "su[4]" at Remoto.v(282)
+Info (10041): Inferred latch for "su[5]" at Remoto.v(282)
+Info (10041): Inferred latch for "su[6]" at Remoto.v(282)
 Info: Elaborating entity "ula" for hierarchy "ula:G1"
 Info: Elaborating entity "bcdout" for hierarchy "bcdout:G2"
 Warning (10036): Verilog HDL or VHDL warning at bcdout.v(7): object "sinal" assigned a value but never read
@@ -531,13 +677,14 @@ Warning (10240): Verilog HDL Always Construct warning at bcdout.v(17): inferring
 Warning (10240): Verilog HDL Always Construct warning at bcdout.v(17): inferring latch(es) for variable "dezz", which holds its previous value in one or more paths through the always construct
 Warning (10240): Verilog HDL Always Construct warning at bcdout.v(17): inferring latch(es) for variable "dez", which holds its previous value in one or more paths through the always construct
 Warning (10240): Verilog HDL Always Construct warning at bcdout.v(17): inferring latch(es) for variable "cen", which holds its previous value in one or more paths through the always construct
-Info: Inferred 4 megafunctions from design logic
-    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
-    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1"
+Info: Inferred 5 megafunctions from design logic
     Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcdout:G2|Mod0"
     Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcdout:G2|Mod1"
-Info: Elaborated megafunction instantiation "lpm_divide:Mod0"
-Info: Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0"
+Info: Elaborated megafunction instantiation "bcdout:G2|lpm_divide:Mod0"
+Info: Instantiated megafunction "bcdout:G2|lpm_divide:Mod0" with the following parameter:
     Info: Parameter "LPM_WIDTHN" = "8"
     Info: Parameter "LPM_WIDTHD" = "4"
     Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -564,26 +711,135 @@ Info: Found 1 design units, including 1 entities, in source file db/sign_div_uns
     Info: Found entity 1: sign_div_unsign_ekh
 Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_g4f.tdf
     Info: Found entity 1: alt_u_div_g4f
+Info: Elaborated megafunction instantiation "lpm_divide:Mod1"
+Info: Instantiated megafunction "lpm_divide:Mod1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "7"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_l9m.tdf
+    Info: Found entity 1: lpm_divide_l9m
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info: Found entity 1: sign_div_unsign_akh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_84f.tdf
+    Info: Found entity 1: alt_u_div_84f
+Info: Elaborated megafunction instantiation "lpm_divide:Mod0"
+Info: Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "8"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Elaborated megafunction instantiation "lpm_divide:Div0"
+Info: Instantiated megafunction "lpm_divide:Div0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "8"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
+    Info: Found entity 1: lpm_divide_jhm
 Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: Latch su[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_1[1]
+Warning: Latch su[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_1[1]
+Warning: Latch su[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_1[1]
+Warning: Latch su[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_1[1]
+Warning: Latch su[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_1[3]
+Warning: Latch su[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_1[1]
+Warning: Latch su[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_1[1]
+Warning: Latch sd[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+Warning: Latch sd[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+Warning: Latch sd[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+Warning: Latch sd[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+Warning: Latch sd[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[3]
+Warning: Latch sd[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+Warning: Latch sd[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA_2[1]
+Warning: Latch suB[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[1]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[1]
+Warning: Latch suB[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[1]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[1]
+Warning: Latch suB[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[1]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[1]
+Warning: Latch suB[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[1]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[1]
+Warning: Latch suB[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[1]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[1]
+Warning: Latch suB[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[1]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[1]
+Warning: Latch suB[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[1]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[1]
+Warning: Latch sdB[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[0]
+Warning: Latch sdB[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[0]
+Warning: Latch sdB[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[0]
+Warning: Latch sdB[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[0]
+Warning: Latch sdB[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[0]
+Warning: Latch sdB[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[0]
+Warning: Latch sdB[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorB[0]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal vetorB[0]
+Warning: Latch vetorA_aux[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[0]
+Warning: Latch vetorA_aux[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[1]
+Warning: Latch vetorA_aux[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[5]
+Warning: Latch vetorA_aux[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[4]
+Warning: Latch vetorA_aux[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[6]
+Warning: Latch vetorA_aux[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[3]
+Warning: Latch vetorA_aux[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal vetorA[2]
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "sinal_A" is stuck at GND
-    Warning (13410): Pin "sinal_B" is stuck at GND
+    Warning (13410): Pin "sing" is stuck at GND
 Info: Timing-Driven Synthesis is running
 Info: 4 registers lost all their fanouts during netlist optimizations. The first 4 are displayed below.
-    Info: Register "estado~11" lost all its fanouts during netlist optimizations.
-    Info: Register "estado~12" lost all its fanouts during netlist optimizations.
-    Info: Register "estado~13" lost all its fanouts during netlist optimizations.
-    Info: Register "estado~15" lost all its fanouts during netlist optimizations.
+    Info: Register "estado_m~11" lost all its fanouts during netlist optimizations.
+    Info: Register "estado_m~12" lost all its fanouts during netlist optimizations.
+    Info: Register "estado_m~13" lost all its fanouts during netlist optimizations.
+    Info: Register "estado_m~15" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file C:/Users/lfms/Downloads/Controle_remoto-master/remote.map.smsg
-Info: Implemented 875 device resources after synthesis - the final resource count might be different
+Info: Implemented 919 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 69 output pins
-    Info: Implemented 804 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 35 warnings
-    Info: Peak virtual memory: 232 megabytes
-    Info: Processing ended: Wed Jun 13 02:00:22 2018
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Implemented 70 output pins
+    Info: Implemented 847 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 129 warnings
+    Info: Peak virtual memory: 233 megabytes
+    Info: Processing ended: Wed Jun 13 13:29:08 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +------------------------------------------+

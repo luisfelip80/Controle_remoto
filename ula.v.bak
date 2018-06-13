@@ -18,7 +18,7 @@ module ula(clock,a,b,r,op,sb,sa,enable);
 		aa = a[6:0];
 		bb = b[6:0];
 		if (!enable || r == 0) begin
-			sinal=0;
+			sinal<=0;
 		end
 		case(op)
 			0: begin
